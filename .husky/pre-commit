@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged --quiet || (
+  echo "❌ Commit failed! Check your code and try to commit again!"; false;
+)
+
+echo "✅ New changes have been committed successfully!";
