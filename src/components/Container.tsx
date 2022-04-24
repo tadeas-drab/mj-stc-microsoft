@@ -1,0 +1,25 @@
+import classNames from 'classnames';
+
+interface ContainerProps {
+  as?: React.ElementType;
+  children: React.ReactNode;
+  className?: string;
+}
+
+const Container = ({
+  as: Component = 'div',
+  className,
+  ...props
+}: ContainerProps) => {
+  return (
+    <Component
+      {...props}
+      className={classNames(
+        'container px-4 mx-auto sm:px-6 lg:px-8',
+        className
+      )}
+    />
+  );
+};
+
+export default Container;
