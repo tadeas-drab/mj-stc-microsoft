@@ -16,6 +16,7 @@ module.exports = {
       tertiary: '#9bf00b',
       black: '#000000',
       white: '#ffffff',
+      transparent: 'transparent',
       'extra-light-gray': '#f2f2f2',
       'light-gray': '#e6e6e6',
       gray: '#d2d2d2',
