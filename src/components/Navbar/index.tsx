@@ -1,16 +1,11 @@
 import { Disclosure } from '@headlessui/react';
-import Container from '../Container';
-import Button from '../Button';
-import NavbarLogo from './NavbarLogo';
-import NavbarToggle from './NavbarToggle';
-import NavbarLink from './NavbarLink';
+import { navigation } from '../../config';
 
-const navigation = [
-  { name: 'O programe', href: '/#o-programe' },
-  { name: 'Študenti', href: '/studenti' },
-  { name: 'Absolventi', href: '/absolventi' },
-  { name: 'Kontakt', href: '/#kontakt' },
-];
+import Button from '../Button';
+import Container from '../Container';
+import NavbarToggle from './NavbarToggle';
+import NavbarLogo from './NavbarLogo';
+import NavbarLink from './NavbarLink';
 
 const Navbar = () => {
   return (
@@ -46,31 +41,33 @@ const Navbar = () => {
               </Button>
             </div>
           </Container>
-          <Disclosure.Panel className="border-t bg-extra-light-gray border-t-light-gray lg:hidden">
-            <Container as="ul">
-              {navigation.map(({ name, href }) => (
-                <Disclosure.Button
-                  className="py-2 border-t border-t-light-gray first:border-0"
-                  key={name}
-                  as="li"
-                >
-                  <NavbarLink href={href} fullWidth>
-                    {name}
-                  </NavbarLink>
-                </Disclosure.Button>
-              ))}
-              <div className="py-3">
-                <Button
-                  title="Registrácia do programu ŠTC"
-                  href="/registracia"
-                  type="outline"
-                  fullWidth
-                >
-                  Registrácia
-                </Button>
-              </div>
-            </Container>
-          </Disclosure.Panel>
+          {open && (
+            <div className="border-t bg-extra-light-gray border-t-light-gray lg:hidden">
+              <Container as="ul">
+                {navigation.map(({ name, href }) => (
+                  <Disclosure.Button
+                    className="py-2 border-t border-t-light-gray first:border-0"
+                    key={name}
+                    as="li"
+                  >
+                    <NavbarLink href={href} fullWidth>
+                      {name}
+                    </NavbarLink>
+                  </Disclosure.Button>
+                ))}
+                <div className="pt-1 pb-4">
+                  <Button
+                    title="Registrácia do programu ŠTC"
+                    href="/registracia"
+                    type="outline"
+                    fullWidth
+                  >
+                    Registrácia
+                  </Button>
+                </div>
+              </Container>
+            </div>
+          )}
         </>
       )}
     </Disclosure>

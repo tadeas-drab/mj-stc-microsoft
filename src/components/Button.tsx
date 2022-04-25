@@ -23,8 +23,8 @@ const Button = ({
     <Anchor
       {...props}
       className={classNames(
-        'px-4 py-1.5 text-sm text-center font-semibold border border-primary focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-offset-2 focus:outline-none rounded',
         fullWidth ? 'block w-full' : 'inline-block',
+        'px-4 py-1.5 text-sm text-center font-semibold border border-primary focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-offset-2 focus:outline-none rounded',
         types[type],
         className
       )}
