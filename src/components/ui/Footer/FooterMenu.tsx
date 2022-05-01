@@ -1,4 +1,4 @@
-import { footer } from '../../config';
+import { footer } from '../../../config';
 import FooterLink from './FooterLink';
 import Container from '../Container';
 

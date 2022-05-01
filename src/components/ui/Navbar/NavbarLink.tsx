@@ -1,4 +1,4 @@
-import Anchor, { AnchorProps } from '../Anchor';
+import Anchor, { AnchorProps } from '../../common/Anchor';
 import classNames from 'classnames';
 
 const NavbarLink = ({ className, ...props }: AnchorProps) => {

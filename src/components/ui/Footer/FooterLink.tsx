@@ -1,5 +1,5 @@
 import type { ISvgIconProps } from '@fluentui/react-icons-mdl2';
-import Anchor, { AnchorProps } from '../Anchor';
+import Anchor, { AnchorProps } from '../../common/Anchor';
 import classNames from 'classnames';
 
 interface FooterLink extends AnchorProps {

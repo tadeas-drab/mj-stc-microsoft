@@ -1,5 +1,5 @@
 import { Disclosure } from '@headlessui/react';
-import { navigation } from '../../config';
+import { navigation } from '../../../config';
 import NavbarLink from './NavbarLink';
 import Container from '../Container';
 import Button from '../Button';
