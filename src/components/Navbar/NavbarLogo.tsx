@@ -12,9 +12,9 @@ const NavbarLogo = () => {
           height={23}
         />
       </NavbarLink>
-      <div className="w-[2px] h-6 mx-2 bg-extra-dark-gray md:mx-4" />
+      <div className="mx-2 h-6 w-[2px] bg-extra-dark-gray md:mx-4" />
       <NavbarLink
-        className="text-[1.125rem] text-medium-gray font-semibold lg:hover:underline lg:hover:underline-offset-[5px] lg:hover:decoration-2 lg:hover:decoration-medium-gray"
+        className="text-md font-semibold tracking-tight text-medium-gray lg:hover:underline lg:hover:decoration-medium-gray lg:hover:decoration-2 lg:hover:underline-offset-[5px]"
         href="/"
       >
         <span className="sm:hidden">ŠTC</span>

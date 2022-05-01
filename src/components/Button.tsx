@@ -3,9 +3,9 @@ import classNames from 'classnames';
 
 const types = {
   default:
-    'bg-primary text-white active:text-tertiary hover:bg-secondary focus-visible:ring-white focus-visible:ring-offset-primary hover:focus-visible:ring-offset-secondary',
+    'bg-primary text-white hover:bg-secondary focus-visible:ring-white focus-visible:ring-offset-primary hover:focus-visible:ring-offset-secondary active:text-tertiary',
   outline:
-    'bg-transparent text-primary active:text-tertiary hover:bg-primary hover:focus-visible:ring-offset-primary focus-visible:ring-primary hover:text-white hover:focus-visible:ring-white',
+    'bg-transparent text-primary hover:bg-primary hover:text-white focus-visible:ring-primary hover:focus-visible:ring-white hover:focus-visible:ring-offset-primary active:text-tertiary',
 };
 
 interface ButtonProps extends AnchorProps {
@@ -24,7 +24,7 @@ const Button = ({
       {...props}
       className={classNames(
         fullWidth ? 'block w-full' : 'inline-block',
-        'px-4 py-1.5 text-sm text-center font-semibold border border-primary focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-offset-2 focus:outline-none rounded',
+        'select-none rounded border border-primary px-4 py-1.5 text-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-offset-2',
         types[type],
         className
       )}
