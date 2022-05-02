@@ -6,7 +6,7 @@ import Container from '../Container';
 
 const Navbar = () => {
   return (
-    <Disclosure className="sticky top-0 bg-white shadow" as="nav">
+    <Disclosure className="sticky top-0 z-50 bg-white shadow" as="nav">
       {({ open }) => (
         <>
           <Container className="flex h-14 items-center space-x-2 xl:space-x-3">
