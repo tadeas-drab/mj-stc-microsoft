@@ -1,4 +1,9 @@
-import { GlobeIcon, FacebookLogoIcon } from '@fluentui/react-icons-mdl2';
+import {
+  MailIcon,
+  GlobeIcon,
+  FacebookLogoIcon,
+} from '@fluentui/react-icons-mdl2';
+
 import InstagramLogoIcon from '../components/icons/InstagramLogoIcon';
 import LinkedInLogoIcon from '../components/icons/LinkedInLogoIcon';
 import YouTubeLogoIcon from '../components/icons/YouTubeLogoIcon';
@@ -8,6 +13,45 @@ export const navigation = [
   { name: 'Študenti', href: '/studenti' },
   { name: 'Absolventi', href: '/absolventi' },
   { name: 'Kontakt', href: '/#kontakt' },
+];
+
+export const contact = [
+  {
+    name: 'Zuzana Molčanová',
+    image: '/images/zuzana-molcanova.jpeg',
+    description: 'Education Industry Executive',
+    position: 'Microsoft',
+    socials: [
+      {
+        name: 'E-mail',
+        href: 'mailto:zuzana.molcanova@microsoft.com',
+        icon: MailIcon,
+      },
+      {
+        name: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/zuzanamol/',
+        icon: LinkedInLogoIcon,
+      },
+    ],
+  },
+  {
+    name: 'Tomáš Odráška',
+    image: '/images/tomas-odraska.jpeg',
+    description: 'Surface Commercial Product Marketing Manager',
+    position: 'Microsoft',
+    socials: [
+      {
+        name: 'E-mail',
+        href: 'mailto:a-todraska@microsoft.com',
+        icon: MailIcon,
+      },
+      {
+        name: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/tomas-odraska/',
+        icon: LinkedInLogoIcon,
+      },
+    ],
+  },
 ];
 
 export const footer = [

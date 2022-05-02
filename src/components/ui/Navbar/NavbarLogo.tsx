@@ -4,7 +4,11 @@ import Image from 'next/image';
 const NavbarLogo = () => {
   return (
     <div className="flex items-center">
-      <NavbarLink href="https://www.microsoft.com" rel="external nofollow">
+      <NavbarLink
+        href="https://www.microsoft.com"
+        rel="external nofollow"
+        target="_blank"
+      >
         <Image
           src="/images/microsoft-logo.png"
           alt="Microsoft logo"

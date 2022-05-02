@@ -12,14 +12,18 @@ const FooterMenu = () => {
               {title}
             </h5>
             <ul className="mt-2">
-              {links.map(({ name, href, icon }) => (
+              {links.map(({ name, href, icon: Icon }) => (
                 <li key={name}>
                   <FooterLink
                     className="h-9 w-full sm:w-auto"
-                    rel="noreferrer"
+                    rel="noreferrer nofollow"
+                    target="_blank"
                     href={href}
-                    icon={icon}
                   >
+                    <Icon
+                      className="mr-2 text-lg text-medium-gray"
+                      aria-hidden
+                    />
                     {name}
                   </FooterLink>
                 </li>

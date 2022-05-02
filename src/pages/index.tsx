@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Contact from '../components/sections/Contact';
 import Head from 'next/head';
 
 const Home: NextPage = () => {
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
         <meta name="description" content="ŠTC Microsoft" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Contact />
     </>
   );
 };

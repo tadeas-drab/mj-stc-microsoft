@@ -18,7 +18,7 @@ const Navbar = () => {
             </div>
             <NavbarMenu />
           </Container>
-          <NavbarMenu.Mobile />
+          {open && <NavbarMenu.Mobile />}
         </>
       )}
     </Disclosure>

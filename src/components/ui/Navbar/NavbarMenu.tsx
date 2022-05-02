@@ -32,7 +32,7 @@ const NavbarMenu = () => {
 
 const MobileNavbarMenu = () => {
   return (
-    <Disclosure.Panel className="border-t bg-extra-light-gray lg:hidden">
+    <div className="border-t bg-extra-light-gray">
       <Container as="ul">
         {navigation.map(({ name, href }) => (
           <Disclosure.Button
@@ -40,7 +40,7 @@ const MobileNavbarMenu = () => {
             key={name}
             as="li"
           >
-            <NavbarLink className="w-full text-black" href={href}>
+            <NavbarLink href={href} className="w-full text-black">
               {name}
             </NavbarLink>
           </Disclosure.Button>
@@ -56,7 +56,7 @@ const MobileNavbarMenu = () => {
           </Button>
         </div>
       </Container>
-    </Disclosure.Panel>
+    </div>
   );
 };
 
