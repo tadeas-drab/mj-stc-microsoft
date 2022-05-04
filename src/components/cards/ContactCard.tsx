@@ -27,8 +27,10 @@ const ContactCard = ({
         <Image src={image} alt={name} layout="fill" />
       </div>
       <div className="relative flex-grow">
-        <h3 className="mb-1 text-lg font-semibold text-white">{name}</h3>
-        <p className="relative mb-6 text-gray after:absolute after:left-0 after:-bottom-4 after:h-[2px] after:w-16 after:rounded after:bg-medium-gray">
+        <h3 className="text-md font-semibold text-white sm:mb-1 sm:text-lg">
+          {name}
+        </h3>
+        <p className="relative mb-5 text-gray after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:w-16 after:rounded after:bg-medium-gray">
           {description}
         </p>
         <p className="mb-4 text-white">{position}</p>

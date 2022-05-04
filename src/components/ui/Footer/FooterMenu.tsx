@@ -8,7 +8,7 @@ const FooterMenu = () => {
       <Container className="grid gap-8 py-8 md:grid-cols-2 lg:grid-cols-3">
         {footer.map(({ title, links }) => (
           <div key={title}>
-            <h5 className="whitespace-nowrap text-md font-semibold tracking-tight">
+            <h5 className="whitespace-nowrap text-md font-semibold tracking-tight text-black">
               {title}
             </h5>
             <ul className="mt-2">

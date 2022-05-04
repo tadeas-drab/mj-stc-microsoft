@@ -7,8 +7,8 @@ import Button from '../ui/Button';
 const Contact = () => {
   return (
     <Section id="kontakt" className="bg-extra-dark-gray">
-      <h2 className="mb-2 text-xl font-semibold text-white">Kontakt</h2>
-      <p className="mb-4 leading-relaxed text-white sm:max-w-md lg:max-w-full">
+      <h2 className="mb-4 text-xl font-semibold text-white">Kontakt</h2>
+      <p className="mb-6 leading-relaxed text-white sm:max-w-md lg:max-w-full">
         V prípade akýchkoľvek nejasností či otázok nás neváhaj kontaktovať.
         Radi zodpovieme všetky tvoje otázky.
       </p>
