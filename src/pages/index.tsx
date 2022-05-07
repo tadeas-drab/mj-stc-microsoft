@@ -1,9 +1,22 @@
-import type { NextPage } from 'next';
+import type {
+  NextPage,
+  GetStaticProps,
+  InferGetStaticPropsType,
+} from 'next';
+
+import { fetchQuotes } from '../utils';
 import Registration from '../components/sections/Registration';
 import Contact from '../components/sections/Contact';
+import Quotes from '../components/sections/Quotes';
 import Head from 'next/head';
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return { props: { quotes: await fetchQuotes() } };
+};
+
+const Home: NextPage = ({
+  quotes,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -11,7 +24,8 @@ const Home: NextPage = () => {
         <meta name="description" content="ŠTC Microsoft" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Registration />
+      <Quotes quotes={quotes} />
+      <Registration opened={false} />
       <Contact />
     </>
   );

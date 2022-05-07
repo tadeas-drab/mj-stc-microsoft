@@ -19,7 +19,7 @@ const Registration = ({ opened = false }: RegistrationProps) => {
     <Section id="registracia" className="bg-white">
       <div className="grid grid-cols-3 items-center">
         <div className="col-span-3 md:col-span-2 md:pr-6">
-          <h2 className="mb-4 text-xl font-semibold text-black">
+          <h2 className="mb-6 text-xl font-semibold text-black">
             <span className="block sm:inline">Zapoj sa do</span>{' '}
             <span className="block sm:inline">programu ŠTC</span>
           </h2>

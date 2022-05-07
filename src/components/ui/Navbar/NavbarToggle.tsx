@@ -2,6 +2,7 @@ import {
   CancelIcon,
   GlobalNavButtonIcon,
 } from '@fluentui/react-icons-mdl2';
+
 import { Disclosure } from '@headlessui/react';
 
 interface NavbarToggleProps {

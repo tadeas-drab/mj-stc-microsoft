@@ -33,3 +33,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body main {
+  @apply overflow-x-hidden;
+}
+
+#citaty .swiper-pagination {
+  @apply static;
+}
+
+#citaty .swiper-pagination .swiper-pagination-bullet {
+  @apply h-4 w-4 bg-secondary opacity-100;
+}
+
+#citaty .swiper-pagination .swiper-pagination-bullet-active {
+  @apply border-4 border-white bg-primary;
+}

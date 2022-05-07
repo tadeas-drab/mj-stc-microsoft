@@ -8,6 +8,8 @@ import InstagramLogoIcon from '../components/icons/InstagramLogoIcon';
 import LinkedInLogoIcon from '../components/icons/LinkedInLogoIcon';
 import YouTubeLogoIcon from '../components/icons/YouTubeLogoIcon';
 
+export const apiUrl = 'https://api.studentambassadors.sk/api';
+
 export const navigation = [
   { name: 'O programe', href: '/#o-programe' },
   { name: 'Študenti', href: '/studenti' },

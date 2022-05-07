@@ -22,7 +22,7 @@ const ContactCard = ({
   socials,
 }: ContactCardProps) => {
   return (
-    <article className="flex space-x-6 rounded bg-dark-gray bg-opacity-50 p-5 shadow-lg xl:p-6">
+    <article className="flex space-x-6 rounded bg-dark-gray bg-opacity-50 p-5 shadow-lg">
       <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-full border-2 border-extra-dark-gray border-opacity-50 shadow-inner sm:h-32 sm:w-32">
         <Image src={image} alt={name} layout="fill" />
       </div>
