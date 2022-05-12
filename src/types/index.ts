@@ -1,6 +1,6 @@
 import type { ISvgIconProps } from '@fluentui/react-icons-mdl2';
 
-export type Icon = React.FC<
+export type SvgIcon = React.FC<
   React.HTMLAttributes<HTMLSpanElement> & ISvgIconProps
 >;
 

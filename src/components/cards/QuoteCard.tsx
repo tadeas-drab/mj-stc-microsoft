@@ -1,6 +1,7 @@
 import { Quote } from '../../types';
 import { api } from '../../utils';
 
+import Icon from '../ui/Icon';
 import QuoteRightIcon from '../icons/QuoteRightIcon';
 import QuoteLeftIcon from '../icons/QuoteLeftIcon';
 import Image from 'next/image';
@@ -24,9 +25,9 @@ const QuoteCard = ({
         <p className="text-sm text-medium-gray">Absolvent programu</p>
       </div>
       <blockquote className="flex-grow p-8 text-extra-dark-gray">
-        <QuoteLeftIcon className="text-lg text-primary" aria-hidden />
+        <Icon icon={QuoteLeftIcon} className="text-lg text-primary" />
         <span className="mx-2 align-middle italic">{quote}</span>
-        <QuoteRightIcon className="text-lg text-primary" aria-hidden />
+        <Icon icon={QuoteRightIcon} className="text-lg text-primary" />
       </blockquote>
     </article>
   );

@@ -1,6 +1,7 @@
 import { footer } from '../../../config';
 import FooterLink from './FooterLink';
 import Container from '../Container';
+import Icon from '../Icon';
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
               {title}
             </h5>
             <ul>
-              {links.map(({ name, href, icon: Icon }) => (
+              {links.map(({ name, href, icon }) => (
                 <li key={name}>
                   <FooterLink
                     className="h-9 w-full sm:w-auto"
@@ -21,9 +22,10 @@ const Footer = () => {
                     href={href}
                   >
                     <Icon
+                      icon={icon}
                       className="mr-2 text-lg text-medium-gray"
-                      aria-hidden
                     />
+
                     {name}
                   </FooterLink>
                 </li>

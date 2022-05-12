@@ -4,6 +4,7 @@ import { MailIcon } from '@fluentui/react-icons-mdl2';
 import ContactCard from '../cards/ContactCard';
 import Section from '../ui/Section';
 import Button from '../ui/Button';
+import Icon from '../ui/Icon';
 
 const Contact = () => {
   return (
@@ -19,7 +20,7 @@ const Contact = () => {
         type="contact"
         fullWidth
       >
-        <MailIcon className="mr-2" aria-hidden />
+        <Icon icon={MailIcon} className="mr-2" />
         info@stcmicrosoft.sk
       </Button>
       <div className="mt-5 grid gap-5 lg:grid-cols-2">

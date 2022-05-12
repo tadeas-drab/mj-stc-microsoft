@@ -1,5 +1,6 @@
-import type { Icon } from '../../types';
+import type { SvgIcon } from '../../types';
 import Anchor from '../ui/Anchor';
+import Icon from '../ui/Icon';
 import Image from 'next/image';
 
 interface ContactCardProps {
@@ -10,7 +11,7 @@ interface ContactCardProps {
   socials: {
     name: string;
     href: string;
-    icon: Icon;
+    icon: SvgIcon;
   }[];
 }
 
@@ -35,7 +36,7 @@ const ContactCard = ({
         </p>
         <p className="mb-4 text-white">{position}</p>
         <div className="mb-1 flex space-x-2">
-          {socials.map(({ name, href, icon: Icon }) => (
+          {socials.map(({ name, href, icon }) => (
             <Anchor
               className="flex h-8 w-8 items-center justify-center rounded-full bg-extra-light-gray text-sm transition-colors hover:bg-tertiary focus:outline-none"
               rel="noreferrer nofollow"
@@ -43,8 +44,7 @@ const ContactCard = ({
               href={href}
               key={name}
             >
-              <span className="sr-only">{name}</span>
-              <Icon aria-hidden />
+              <Icon icon={icon} screenReaderLabel={name} />
             </Anchor>
           ))}
         </div>
