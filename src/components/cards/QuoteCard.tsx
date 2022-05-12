@@ -5,13 +5,15 @@ import QuoteRightIcon from '../icons/QuoteRightIcon';
 import QuoteLeftIcon from '../icons/QuoteLeftIcon';
 import Image from 'next/image';
 
-type QuoteCardProps = Omit<Quote, 'quoteOrder'>;
-
-const QuoteCard = ({ id, quote, quoteAuthor }: QuoteCardProps) => {
+const QuoteCard = ({
+  id,
+  quote,
+  quoteAuthor,
+}: Omit<Quote, 'quoteOrder'>) => {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded bg-white shadow-lg">
-      <div className="order-2 mt-8 h-auto flex-shrink-0 bg-extra-light-gray p-5">
-        <div className="relative -mt-14 mb-4 ml-2 h-20 w-20 overflow-hidden rounded-full shadow-inner ring-4 ring-white">
+    <article className="flex h-full flex-col overflow-hidden rounded-md bg-white shadow-lg">
+      <div className="order-2 mt-8 flex-shrink-0 bg-extra-light-gray p-5">
+        <div className="relative -mt-14 mb-3 ml-2 box-content h-20 w-20 overflow-hidden rounded-full border-[5px] border-white shadow-inner">
           <Image
             src={api(`stc/quotes/${id}`)}
             alt={quoteAuthor}
@@ -21,9 +23,9 @@ const QuoteCard = ({ id, quote, quoteAuthor }: QuoteCardProps) => {
         <h3 className="text-md font-semibold text-black">{quoteAuthor}</h3>
         <p className="text-sm text-medium-gray">Absolvent programu</p>
       </div>
-      <blockquote className="mb-2 flex-grow p-6 italic text-extra-dark-gray">
+      <blockquote className="flex-grow p-8 text-extra-dark-gray">
         <QuoteLeftIcon className="text-lg text-primary" aria-hidden />
-        <span className="mx-2 align-middle">{quote}</span>
+        <span className="mx-2 align-middle italic">{quote}</span>
         <QuoteRightIcon className="text-lg text-primary" aria-hidden />
       </blockquote>
     </article>

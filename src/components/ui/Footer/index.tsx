@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
         ))}
       </Container>
-      <div className="border-t bg-extra-light-gray py-5">
+      <div className="bg-extra-light-gray py-5">
         <Container className="text-center text-sm text-black sm:text-left">
           &copy; Copyright{' '}
           <FooterLink href="/" className="font-semibold">

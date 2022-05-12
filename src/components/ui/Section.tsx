@@ -9,8 +9,8 @@ interface SectionProps {
 
 const Section = ({ children, className, id }: SectionProps) => {
   return (
-    <section id={id} className={classNames('scroll-m-10', className)}>
-      <Container className="py-10">{children}</Container>
+    <section id={id} className={classNames('scroll-m-12', className)}>
+      <Container className="py-12">{children}</Container>
     </section>
   );
 };

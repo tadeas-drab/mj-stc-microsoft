@@ -16,7 +16,7 @@ const Button = ({
     <Anchor
       {...props}
       className={classNames(
-        'flex items-center justify-center rounded px-4 focus:outline-none',
+        'flex items-center justify-center rounded-md px-5 focus:outline-none',
         fullWidth ? 'w-full' : 'w-auto max-w-min',
         className,
         {

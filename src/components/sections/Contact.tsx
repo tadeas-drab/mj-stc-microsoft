@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <Section id="kontakt" className="bg-extra-dark-gray">
       <h2 className="mb-2 text-xl font-semibold text-white">Kontakt</h2>
-      <p className="mb-6 leading-relaxed text-white sm:max-w-md lg:max-w-full">
+      <p className="mb-5 leading-relaxed text-white sm:max-w-md lg:max-w-full">
         V prípade akýchkoľvek nejasností či otázok nás neváhaj kontaktovať.
         Radi zodpovieme všetky tvoje otázky.
       </p>
@@ -22,7 +22,7 @@ const Contact = () => {
         <MailIcon className="mr-2" aria-hidden />
         info@stcmicrosoft.sk
       </Button>
-      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+      <div className="mt-5 grid gap-5 lg:grid-cols-2">
         {contact.map(({ name, ...props }) => (
           <ContactCard {...props} key={name} name={name} />
         ))}

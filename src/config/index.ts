@@ -11,7 +11,7 @@ import YouTubeLogoIcon from '../components/icons/YouTubeLogoIcon';
 export const apiUrl = 'https://api.studentambassadors.sk/api';
 
 export const navigation = [
-  { name: 'O programe', href: '/#o-programe' },
+  { name: 'O programe', href: '/#oPrograme' },
   { name: 'Študenti', href: '/studenti' },
   { name: 'Absolventi', href: '/absolventi' },
   { name: 'Kontakt', href: '/#kontakt' },

@@ -22,15 +22,15 @@ const ContactCard = ({
   socials,
 }: ContactCardProps) => {
   return (
-    <article className="flex space-x-6 rounded bg-dark-gray bg-opacity-50 p-5 shadow-lg">
-      <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-full border-2 border-extra-dark-gray border-opacity-50 shadow-inner sm:h-32 sm:w-32">
-        <Image src={image} alt={name} layout="fill" />
+    <article className="flex space-x-5 rounded-lg bg-dark-gray bg-opacity-50 p-5 shadow-lg">
+      <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-full border-[5px] border-medium-gray border-opacity-50 shadow-inner sm:h-32 sm:w-32">
+        <Image src={image} alt={name} layout="fill" objectFit="contain" />
       </div>
       <div className="relative flex-grow">
         <h3 className="text-md font-semibold text-white sm:mb-1 sm:text-lg">
           {name}
         </h3>
-        <p className="relative mb-5 text-gray after:absolute after:left-0 after:-bottom-3 after:h-[2px] after:w-16 after:rounded after:bg-medium-gray">
+        <p className="relative mb-4 text-gray after:absolute after:left-0 after:-bottom-2.5 after:h-[2px] after:w-16 after:rounded after:bg-medium-gray">
           {description}
         </p>
         <p className="mb-4 text-white">{position}</p>

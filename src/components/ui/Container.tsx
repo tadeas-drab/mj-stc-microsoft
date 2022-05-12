@@ -15,7 +15,7 @@ const Container = ({
     <Component
       {...props}
       className={classNames(
-        'container mx-auto px-4 sm:px-6 lg:px-8',
+        'container mx-auto px-5 sm:px-6 lg:px-8',
         className
       )}
     />

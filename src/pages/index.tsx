@@ -8,6 +8,7 @@ import { fetchQuotes } from '../utils';
 import Registration from '../components/sections/Registration';
 import Contact from '../components/sections/Contact';
 import Quotes from '../components/sections/Quotes';
+import About from '../components/sections/About';
 import Head from 'next/head';
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -24,6 +25,7 @@ const Home: NextPage = ({
         <meta name="description" content="ŠTC Microsoft" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <About />
       <Quotes quotes={quotes} />
       <Registration opened={false} />
       <Contact />

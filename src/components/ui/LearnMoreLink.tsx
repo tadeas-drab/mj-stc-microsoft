@@ -2,13 +2,26 @@ import { ChevronRightMedIcon } from '@fluentui/react-icons-mdl2';
 import Anchor, { AnchorProps } from './Anchor';
 import classNames from 'classnames';
 
-const LearnMoreLink = ({ children, className, ...props }: AnchorProps) => {
+interface LearnMoreLinkProps extends AnchorProps {
+  color?: 'primary' | 'white';
+}
+
+const LearnMoreLink = ({
+  color = 'primary',
+  children,
+  className,
+  ...props
+}: LearnMoreLinkProps) => {
   return (
     <Anchor
       {...props}
       className={classNames(
-        'group inline-flex items-center text-primary decoration-primary hover:underline focus:outline-none focus-visible:underline active:underline',
-        className
+        'group inline-flex items-center hover:underline focus:outline-none focus-visible:underline active:underline',
+        className,
+        {
+          'text-primary decoration-primary': color === 'primary',
+          'text-white decoration-white': color === 'white',
+        }
       )}
     >
       {children}

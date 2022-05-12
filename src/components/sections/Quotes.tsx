@@ -12,7 +12,7 @@ interface QuotesProps {
 const Quotes = ({ quotes }: QuotesProps) => {
   return (
     <Section id="citaty" className="bg-primary">
-      <h2 className="mb-6 text-center text-xl font-semibold text-white">
+      <h2 className="mb-8 -mt-4 text-center text-xl font-semibold text-white">
         Citáty
       </h2>
       <Swiper
@@ -21,7 +21,7 @@ const Quotes = ({ quotes }: QuotesProps) => {
         centeredSlides={true}
         style={{ overflow: 'unset' }}
         modules={[Autoplay, Pagination]}
-        spaceBetween={25}
+        spaceBetween={20}
         pagination={{
           el: '.swiper-pagination',
           clickable: true,
@@ -38,7 +38,7 @@ const Quotes = ({ quotes }: QuotesProps) => {
             <QuoteCard {...props} id={id} />
           </SwiperSlide>
         ))}
-        <div className="mt-6" slot="container-end">
+        <div className="mt-8 -mb-4" slot="container-end">
           <div className="swiper-pagination" />
         </div>
       </Swiper>

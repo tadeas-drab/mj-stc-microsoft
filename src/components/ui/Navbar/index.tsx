@@ -12,7 +12,7 @@ const Navbar = () => {
     <Disclosure className="sticky top-0 z-50 bg-white shadow" as="nav">
       {({ open }) => (
         <>
-          <Container className="flex h-14 items-center space-x-2 xl:space-x-3">
+          <Container className="flex h-14 items-center space-x-2 xl:space-x-4">
             <div className="relative flex-grow lg:flex-grow-0">
               <div className="flex items-center">
                 <NavbarLink
@@ -43,11 +43,11 @@ const Navbar = () => {
               </div>
             </div>
             <div className="hidden flex-grow items-center justify-between lg:flex">
-              <ul className="flex flex-shrink-0 space-x-2 xl:space-x-3">
+              <ul className="flex flex-shrink-0 space-x-2 xl:space-x-4">
                 {navigation.map(({ name, href }) => (
                   <li key={name}>
                     <NavbarLink
-                      className="text-sm text-black hover:underline hover:decoration-extra-dark-gray hover:decoration-2 hover:underline-offset-[5px]"
+                      className="text-sm font-normal tracking-normal text-black hover:underline hover:decoration-extra-dark-gray hover:decoration-2 hover:underline-offset-[5px]"
                       href={href}
                     >
                       {name}
@@ -65,18 +65,16 @@ const Navbar = () => {
             </div>
           </Container>
           <Disclosure.Panel className="border-t bg-extra-light-gray">
-            <Container as="ul">
-              {navigation.map(({ name, href }) => (
-                <Disclosure.Button
-                  className="border-t py-1 first:border-0"
-                  key={name}
-                  as="li"
-                >
-                  <NavbarLink href={href} className="w-full text-black">
-                    {name}
-                  </NavbarLink>
-                </Disclosure.Button>
-              ))}
+            <Container>
+              <ul className="divide-y">
+                {navigation.map(({ name, href }) => (
+                  <Disclosure.Button key={name} className="py-1.5" as="li">
+                    <NavbarLink href={href} className="w-full text-black">
+                      {name}
+                    </NavbarLink>
+                  </Disclosure.Button>
+                ))}
+              </ul>
               <div className="pt-1 pb-4">
                 <Button
                   title="Registrácia do programu ŠTC"
