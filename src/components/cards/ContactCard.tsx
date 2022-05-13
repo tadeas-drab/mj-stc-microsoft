@@ -25,7 +25,13 @@ const ContactCard = ({
   return (
     <article className="flex space-x-5 rounded-lg bg-dark-gray bg-opacity-50 p-5 shadow-lg">
       <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-full border-[5px] border-medium-gray border-opacity-50 shadow-inner sm:h-32 sm:w-32">
-        <Image src={image} alt={name} layout="fill" objectFit="contain" />
+        <Image
+          objectFit="contain"
+          layout="fill"
+          title={name}
+          src={image}
+          alt={name}
+        />
       </div>
       <div className="relative flex-grow">
         <h3 className="text-md font-semibold text-white sm:mb-1 sm:text-lg">
@@ -41,6 +47,7 @@ const ContactCard = ({
               className="flex h-8 w-8 items-center justify-center rounded-full bg-extra-light-gray text-sm transition-colors hover:bg-tertiary focus:outline-none"
               rel="noreferrer nofollow"
               target="_blank"
+              title={name}
               href={href}
               key={name}
             >

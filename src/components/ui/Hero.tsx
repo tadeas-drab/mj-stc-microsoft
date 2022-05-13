@@ -6,25 +6,25 @@ interface HeroProps {
   children: React.ReactNode;
   backgroundImage: { src: string; alt: string };
   backgroundPosition: 'top' | 'center' | 'bottom';
-  type?: 'default' | 'large';
+  large?: boolean;
 }
 
 const Hero = ({
   children,
   backgroundImage,
   backgroundPosition,
-  type = 'default',
+  large = false,
 }: HeroProps) => {
   return (
     <header
       className={classNames('relative flex min-h-[35vh] items-center', {
-        'sm:min-h-[50vh] lg:min-h-[70vh]': type === 'large',
+        'sm:min-h-[50vh] lg:min-h-[70vh]': large,
       })}
     >
       <div
         className={classNames(
           'absolute inset-0 -z-50 h-full select-none lg:fixed',
-          type === 'large' ? 'lg:h-[80vh]' : 'lg:h-[50vh]'
+          large ? 'lg:h-[80vh]' : 'lg:h-[50vh]'
         )}
       >
         <Image
@@ -36,11 +36,11 @@ const Hero = ({
           src={backgroundImage.src}
           alt={backgroundImage.alt}
           objectFit="cover"
+          priority={true}
           layout="fill"
-          priority
         />
       </div>
-      <Container className="py-12 drop-shadow-lg">{children}</Container>
+      <Container className="py-12 drop-shadow-xl">{children}</Container>
     </header>
   );
 };

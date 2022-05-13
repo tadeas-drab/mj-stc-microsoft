@@ -11,7 +11,7 @@ export interface AnchorProps
 
 const Anchor = ({ children, href, ...props }: AnchorProps) => {
   return (
-    <Link href={href} passHref>
+    <Link href={href} passHref={true}>
       <a {...props}>{children}</a>
     </Link>
   );

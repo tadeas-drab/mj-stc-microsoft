@@ -16,7 +16,7 @@ const Icon = ({
       {screenReaderLabel && (
         <span className="sr-only">{screenReaderLabel}</span>
       )}
-      <IconComponent className={className} aria-hidden />
+      <IconComponent className={className} aria-hidden={true} />
     </>
   );
 };

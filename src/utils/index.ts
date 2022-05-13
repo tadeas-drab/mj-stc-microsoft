@@ -1,5 +1,4 @@
-import { apiUrl } from '../config';
-import { Quote } from '../types';
+import type { Quote } from '../types';
 
 /**
  * Helper function that creates the endpoint URL.
@@ -7,6 +6,8 @@ import { Quote } from '../types';
  * @returns The endpoint URL.
  */
 export const api = (route: string): string => {
+  const apiUrl = 'https://api.studentambassadors.sk/api';
+
   return `${apiUrl}/${route.replace(/^\//, '')}`;
 };
 

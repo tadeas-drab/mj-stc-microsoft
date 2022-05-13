@@ -1,11 +1,16 @@
 import { Disclosure } from '@headlessui/react';
-import { navigation } from '../../../config';
-
 import NavbarToggle from './NavbarToggle';
 import NavbarLink from './NavbarLink';
 import Container from '../Container';
 import Button from '../Button';
 import Image from 'next/image';
+
+const navigation = [
+  { name: 'O programe', href: '/#oPrograme' },
+  { name: 'Študenti', href: '/studenti' },
+  { name: 'Absolventi', href: '/absolventi' },
+  { name: 'Kontakt', href: '/#kontakt' },
+];
 
 const Navbar = () => {
   return (
@@ -57,8 +62,8 @@ const Navbar = () => {
               </ul>
               <Button
                 title="Registrácia do programu ŠTC"
+                variant="primary-solid"
                 href="/registracia"
-                type="default"
               >
                 Registrácia
               </Button>
@@ -78,9 +83,9 @@ const Navbar = () => {
               <div className="pt-1 pb-4">
                 <Button
                   title="Registrácia do programu ŠTC"
+                  variant="primary-outline"
                   href="/registracia"
-                  type="outline"
-                  fullWidth
+                  fullWidth={true}
                 >
                   Registrácia
                 </Button>

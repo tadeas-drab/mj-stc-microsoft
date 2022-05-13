@@ -1,10 +1,10 @@
-import { Quote } from '../../types';
+import type { Quote } from '../../types';
 import { api } from '../../utils';
 
-import Icon from '../ui/Icon';
 import QuoteRightIcon from '../icons/QuoteRightIcon';
 import QuoteLeftIcon from '../icons/QuoteLeftIcon';
 import Image from 'next/image';
+import Icon from '../ui/Icon';
 
 const QuoteCard = ({
   id,
@@ -17,12 +17,14 @@ const QuoteCard = ({
         <div className="relative -mt-14 mb-3 ml-2 box-content h-20 w-20 overflow-hidden rounded-full border-[5px] border-white shadow-inner">
           <Image
             src={api(`stc/quotes/${id}`)}
+            objectFit="contain"
+            title={quoteAuthor}
             alt={quoteAuthor}
             layout="fill"
           />
         </div>
         <h3 className="text-md font-semibold text-black">{quoteAuthor}</h3>
-        <p className="text-sm text-medium-gray">Absolvent programu</p>
+        <p className="text-medium-gray">Absolvent programu</p>
       </div>
       <blockquote className="flex-grow p-8 text-extra-dark-gray">
         <Icon icon={QuoteLeftIcon} className="text-lg text-primary" />

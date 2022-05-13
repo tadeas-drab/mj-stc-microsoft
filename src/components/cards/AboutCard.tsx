@@ -1,14 +1,26 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 
 interface AboutCardProps {
   children: React.ReactNode;
   image?: { src: string; alt: string };
+  className?: string;
   title?: string;
 }
 
-const AboutCard = ({ children, image, title }: AboutCardProps) => {
+const AboutCard = ({
+  children,
+  image,
+  className,
+  title,
+}: AboutCardProps) => {
   return (
-    <article className="rounded-md bg-extra-light-gray p-5">
+    <article
+      className={classNames(
+        'rounded-md bg-extra-light-gray p-5',
+        className
+      )}
+    >
       <div className="sm:flex sm:flex-row sm:items-center sm:gap-x-4 sm:gap-y-2">
         {image && (
           <div className="relative order-1 float-right mt-2 ml-4 h-16 w-16 flex-shrink-0 sm:h-28 sm:w-28">
@@ -16,6 +28,7 @@ const AboutCard = ({ children, image, title }: AboutCardProps) => {
               objectFit="contain"
               src={image.src}
               alt={image.alt}
+              title={title}
               layout="fill"
             />
           </div>
