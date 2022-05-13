@@ -16,7 +16,7 @@ const Registration = ({ opened = false }: RegistrationProps) => {
     : 'Registrácia zatvorená';
 
   return (
-    <Section id="registracia">
+    <Section id="registracia" className="bg-white">
       <div className="grid grid-cols-3 items-center gap-2">
         <div className="col-span-3 -my-2 sm:my-0 md:order-1 md:col-span-1 md:block">
           <Image
