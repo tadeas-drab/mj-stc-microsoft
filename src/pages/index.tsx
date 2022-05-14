@@ -39,7 +39,7 @@ const Home: NextPage = ({
         backgroundPosition="top"
         backgroundImage={{
           alt: 'Naštartuj svoju kariéru!',
-          src: '/images/hero.webp',
+          src: '/images/hero/home.webp',
         }}
       >
         <h1 className="mb-4 text-xl font-semibold text-white md:mb-6 md:text-2xl">
@@ -89,7 +89,7 @@ const Home: NextPage = ({
           </div>
           <div className="col-span-2 lg:col-span-1">
             <Image
-              src="/images/o-programe.png"
+              src="/images/about.png"
               alt="O programe Microsoft ŠTC"
               objectFit="contain"
               layout="responsive"
@@ -106,7 +106,7 @@ const Home: NextPage = ({
             title="Letná škola"
             className="col-span-2 xl:col-span-1"
             image={{
-              src: '/images/letna-skola.png',
+              src: '/images/summer-school.png',
               alt: 'Letná škola',
             }}
           >
