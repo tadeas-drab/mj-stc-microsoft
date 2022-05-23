@@ -26,7 +26,7 @@ const Navbar = () => {
                   target="_blank"
                 >
                   <Image
-                    src="/images/microsoft-logo.png"
+                    src="/images/logo/microsoft.png"
                     alt="Microsoft logo"
                     width={108}
                     height={23}

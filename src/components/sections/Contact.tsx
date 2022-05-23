@@ -9,7 +9,7 @@ import Icon from '../ui/Icon';
 const contact = [
   {
     name: 'Zuzana Molčanová',
-    image: '/images/zuzana-molcanova.jpeg',
+    image: '/images/contact/zuzana-molcanova.jpeg',
     description: 'Education Industry Executive',
     position: 'Microsoft',
     socials: [
@@ -27,7 +27,7 @@ const contact = [
   },
   {
     name: 'Tomáš Odráška',
-    image: '/images/tomas-odraska.jpeg',
+    image: '/images/contact/tomas-odraska.jpeg',
     description: 'Surface Commercial Product Marketing Manager',
     position: 'Microsoft',
     socials: [

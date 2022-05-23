@@ -120,7 +120,7 @@ const Home: NextPage = ({
             title="Microsoft Learn Student Ambassadors"
             className="col-span-2 xl:col-span-1"
             image={{
-              src: '/images/mlsa-logo.png',
+              src: '/images/logo/mlsa.png',
               alt: 'Microsoft Learn Student Ambassadors logo',
             }}
           >
