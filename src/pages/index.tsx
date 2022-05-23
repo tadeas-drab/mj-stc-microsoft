@@ -9,7 +9,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 
 import heroImage from '../../public/images/hero/home.webp';
-import aboutImage from '../../public/images/about.png';
+import aboutImage from '../../public/images/about.webp';
 
 import LearnMoreLink from '../components/ui/LearnMoreLink';
 import CheckList from '../components/ui/CheckList';
@@ -107,7 +107,7 @@ const Home: NextPage = ({
             title="Letná škola"
             className="col-span-2 xl:col-span-1"
             image={{
-              src: '/images/summer-school.png',
+              src: '/images/summer-school.webp',
               alt: 'Letná škola',
             }}
           >

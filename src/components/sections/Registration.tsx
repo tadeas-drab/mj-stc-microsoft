@@ -1,5 +1,5 @@
-import registrationOpened from '../../../public/images/registration-opened.png';
-import registrationClosed from '../../../public/images/registration-closed.png';
+import registrationOpened from '../../../public/images/registration-opened.webp';
+import registrationClosed from '../../../public/images/registration-closed.webp';
 
 import LearnMoreLink from '../ui/LearnMoreLink';
 import Section from '../ui/Section';

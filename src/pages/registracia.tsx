@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import heroImage from '../../public/images/hero/registration.jpeg';
+import heroImage from '../../public/images/hero/registration.webp';
 import AboutCard from '../components/cards/AboutCard';
 import Contact from '../components/sections/Contact';
 import Section from '../components/ui/Section';
