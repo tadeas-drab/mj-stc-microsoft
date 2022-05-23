@@ -1,3 +1,6 @@
+import registrationOpened from '../../../public/images/registration-opened.png';
+import registrationClosed from '../../../public/images/registration-closed.png';
+
 import LearnMoreLink from '../ui/LearnMoreLink';
 import Section from '../ui/Section';
 import Image from 'next/image';
@@ -7,22 +10,15 @@ interface RegistrationProps {
 }
 
 const Registration = ({ opened = false }: RegistrationProps) => {
-  const imageSrc = opened
-    ? '/images/registration-opened.png'
-    : '/images/registration-closed.png';
-
-  const imageAlt = opened
-    ? 'Registrácia otvorená'
-    : 'Registrácia zatvorená';
-
   return (
     <Section className="bg-white">
       <div className="grid grid-cols-3 items-center gap-2">
         <div className="col-span-3 -my-2 sm:my-0 md:order-1 md:col-span-1 md:block">
           <Image
+            src={opened ? registrationOpened : registrationClosed}
+            alt={opened ? 'Registrácia otvorená' : 'Registrácia zatvorená'}
             objectFit="contain"
-            src={imageSrc}
-            alt={imageAlt}
+            placeholder="blur"
             height={300}
             width={400}
           />

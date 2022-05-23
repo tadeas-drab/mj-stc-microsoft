@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import heroImage from '../../public/images/hero/registration.jpeg';
 import AboutCard from '../components/cards/AboutCard';
 import Contact from '../components/sections/Contact';
 import Section from '../components/ui/Section';
@@ -12,15 +13,12 @@ const Registracia: NextPage = () => {
       <Head>
         <title>Registrácia - ŠTC Microsoft</title>
         <meta name="description" content="ŠTC Microsoft" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero
-        large={false}
+        imageSrc={heroImage}
+        imageAlt="Registrácia do programu"
         backgroundPosition="top"
-        backgroundImage={{
-          alt: 'Registrácia do programu',
-          src: '/images/hero/registration.jpeg',
-        }}
+        large={false}
       >
         <h1 className="mb-4 text-xl font-semibold text-white md:mb-6 md:text-2xl">
           <span className="block">Registrácia</span>{' '}

@@ -8,6 +8,9 @@ import { fetchQuotes } from '../utils';
 import Image from 'next/image';
 import Head from 'next/head';
 
+import heroImage from '../../public/images/hero/home.webp';
+import aboutImage from '../../public/images/about.png';
+
 import LearnMoreLink from '../components/ui/LearnMoreLink';
 import CheckList from '../components/ui/CheckList';
 import Section from '../components/ui/Section';
@@ -32,15 +35,12 @@ const Home: NextPage = ({
       <Head>
         <title>ŠTC Microsoft</title>
         <meta name="description" content="ŠTC Microsoft" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero
-        large={true}
+        imageSrc={heroImage}
+        imageAlt="Naštartuj svoju kariéru!"
         backgroundPosition="top"
-        backgroundImage={{
-          alt: 'Naštartuj svoju kariéru!',
-          src: '/images/hero/home.webp',
-        }}
+        large={true}
       >
         <h1 className="mb-4 text-xl font-semibold text-white md:mb-6 md:text-2xl">
           <span className="block">Naštartuj</span>{' '}
@@ -89,10 +89,11 @@ const Home: NextPage = ({
           </div>
           <div className="col-span-2 lg:col-span-1">
             <Image
-              src="/images/about.png"
+              src={aboutImage}
               alt="O programe Microsoft ŠTC"
               objectFit="contain"
               layout="responsive"
+              placeholder="blur"
               height={600}
               width={700}
             />
@@ -137,7 +138,7 @@ const Home: NextPage = ({
         </h2>
         <QuoteCarousel quotes={quotes} />
       </Section>
-      <Registration opened={false} />
+      <Registration />
       <Contact />
     </>
   );

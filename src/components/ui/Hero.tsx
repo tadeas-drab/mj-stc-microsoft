@@ -1,18 +1,20 @@
+import Image, { StaticImageData } from 'next/image';
 import classNames from 'classnames';
 import Container from './Container';
-import Image from 'next/image';
 
 interface HeroProps {
+  backgroundPosition: 'top' | 'center';
   children: React.ReactNode;
-  backgroundImage: { src: string; alt: string };
-  backgroundPosition: 'top' | 'center' | 'bottom';
+  imageSrc: StaticImageData;
+  imageAlt: string;
   large?: boolean;
 }
 
 const Hero = ({
-  children,
-  backgroundImage,
   backgroundPosition,
+  children,
+  imageSrc,
+  imageAlt,
   large = false,
 }: HeroProps) => {
   return (
@@ -23,20 +25,20 @@ const Hero = ({
     >
       <div
         className={classNames(
-          'absolute inset-0 -z-50 h-full select-none lg:fixed',
+          'absolute inset-0 -z-50 h-full select-none lg:fixed lg:min-h-[100vh]',
           large ? 'lg:h-[80vh]' : 'lg:h-[50vh]'
         )}
       >
         <Image
           className={classNames({
-            'object-bottom': backgroundPosition === 'bottom',
             'object-center': backgroundPosition === 'center',
             'object-top': backgroundPosition === 'top',
           })}
-          src={backgroundImage.src}
-          alt={backgroundImage.alt}
+          placeholder="blur"
           objectFit="cover"
           priority={true}
+          src={imageSrc}
+          alt={imageAlt}
           layout="fill"
           height={1080}
           width={1920}
