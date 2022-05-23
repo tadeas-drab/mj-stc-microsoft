@@ -38,6 +38,8 @@ const Hero = ({
           objectFit="cover"
           priority={true}
           layout="fill"
+          height={1080}
+          width={1920}
         />
       </div>
       <Container className="py-12 drop-shadow-xl">{children}</Container>

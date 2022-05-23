@@ -80,7 +80,7 @@ const Navbar = () => {
                   </Disclosure.Button>
                 ))}
               </ul>
-              <div className="pt-1 pb-4">
+              <Disclosure.Button className="pt-1 pb-4" as="div">
                 <Button
                   title="Registrácia do programu ŠTC"
                   variant="primary-outline"
@@ -89,7 +89,7 @@ const Navbar = () => {
                 >
                   Registrácia
                 </Button>
-              </div>
+              </Disclosure.Button>
             </Container>
           </Disclosure.Panel>
         </>
