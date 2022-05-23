@@ -45,7 +45,7 @@ const ContactCard = ({
           {socials.map(({ name, href, icon }) => (
             <Anchor
               className="flex h-8 w-8 items-center justify-center rounded-full bg-extra-light-gray text-sm transition-colors hover:bg-tertiary focus:outline-none"
-              rel="noreferrer nofollow"
+              rel="noreferrer nofollow noopener"
               target="_blank"
               title={name}
               href={href}

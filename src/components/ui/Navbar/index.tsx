@@ -1,4 +1,3 @@
-import microsoftLogo from '../../../../public/images/logo/microsoft.png';
 import { Disclosure } from '@headlessui/react';
 import NavbarToggle from './NavbarToggle';
 import NavbarLink from './NavbarLink';
@@ -23,13 +22,12 @@ const Navbar = () => {
               <div className="flex items-center">
                 <NavbarLink
                   href="https://www.microsoft.com"
-                  rel="external nofollow"
+                  rel="noreferrer nofollow noopener"
                   target="_blank"
                 >
                   <Image
-                    src={microsoftLogo}
+                    src="/images/logo/microsoft.png"
                     alt="Microsoft logo"
-                    placeholder="blur"
                     priority={true}
                     width={108}
                     height={23}

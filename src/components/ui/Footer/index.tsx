@@ -109,7 +109,7 @@ const Footer = () => {
                 <li key={name}>
                   <FooterLink
                     className="h-9 w-full sm:w-auto"
-                    rel="noreferrer nofollow"
+                    rel="noreferrer nofollow noopener"
                     target="_blank"
                     href={href}
                   >

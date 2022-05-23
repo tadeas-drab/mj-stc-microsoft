@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 import heroImage from '../../public/images/hero/registration.webp';
 import AboutCard from '../components/cards/AboutCard';
@@ -10,10 +10,7 @@ import Hero from '../components/ui/Hero';
 const Registracia: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Registrácia - ŠTC Microsoft</title>
-        <meta name="description" content="ŠTC Microsoft" />
-      </Head>
+      <NextSeo title="Registrácia" />
       <Hero
         imageSrc={heroImage}
         imageAlt="Registrácia do programu"

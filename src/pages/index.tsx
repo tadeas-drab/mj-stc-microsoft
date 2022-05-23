@@ -5,11 +5,9 @@ import type {
 } from 'next';
 
 import { fetchQuotes } from '../utils';
-import Image from 'next/image';
-import Head from 'next/head';
-
 import heroImage from '../../public/images/hero/home.webp';
 import aboutImage from '../../public/images/about.webp';
+import Image from 'next/image';
 
 import LearnMoreLink from '../components/ui/LearnMoreLink';
 import CheckList from '../components/ui/CheckList';
@@ -32,10 +30,6 @@ const Home: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <Head>
-        <title>ŠTC Microsoft</title>
-        <meta name="description" content="ŠTC Microsoft" />
-      </Head>
       <Hero
         imageSrc={heroImage}
         imageAlt="Naštartuj svoju kariéru!"
