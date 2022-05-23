@@ -19,17 +19,6 @@
     url('/fonts/SegoeUI-Semibold.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Segoe UI';
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-  src: local('Segoe UI Bold'),
-    url('/fonts/SegoeUI-Bold.woff2') format('woff2'),
-    url('/fonts/SegoeUI-Bold.woff') format('woff'),
-    url('/fonts/SegoeUI-Bold.ttf') format('truetype');
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
