@@ -112,10 +112,11 @@ const Footer = () => {
                     rel="noreferrer nofollow noopener"
                     target="_blank"
                     href={href}
+                    as="link"
                   >
                     <Icon
-                      icon={icon}
                       className="mr-2 text-lg text-medium-gray"
+                      icon={icon}
                     />
 
                     {name}
@@ -129,7 +130,7 @@ const Footer = () => {
       <div className="bg-extra-light-gray py-5">
         <Container className="text-center text-sm text-black sm:text-left">
           &copy; Copyright{' '}
-          <FooterLink href="/" className="font-semibold">
+          <FooterLink href="/" className="font-semibold" as="link">
             Študentské Trénerské Centrum Microsoft
           </FooterLink>
         </Container>

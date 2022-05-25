@@ -58,6 +58,7 @@ const Contact = () => {
         title="Napíšte nám správu!"
         variant="contact-solid"
         fullWidth={true}
+        as="link"
       >
         <Icon icon={MailIcon} className="mr-2" />
         info@stcmicrosoft.sk

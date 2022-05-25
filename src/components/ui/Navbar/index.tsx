@@ -1,9 +1,15 @@
+import {
+  CancelIcon,
+  GlobalNavButtonIcon,
+} from '@fluentui/react-icons-mdl2';
+
 import { Disclosure } from '@headlessui/react';
-import NavbarToggle from './NavbarToggle';
+import Image from 'next/image';
+
 import NavbarLink from './NavbarLink';
 import Container from '../Container';
 import Button from '../Button';
-import Image from 'next/image';
+import Icon from '../Icon';
 
 const navigation = [
   { name: 'O programe', href: '/#oPrograme' },
@@ -24,6 +30,7 @@ const Navbar = () => {
                   href="https://www.microsoft.com"
                   rel="noreferrer nofollow noopener"
                   target="_blank"
+                  as="link"
                 >
                   <Image
                     src="/images/logo/microsoft.png"
@@ -36,6 +43,7 @@ const Navbar = () => {
                 <div className="mx-2 h-6 w-[2px] bg-extra-dark-gray md:mx-4" />
                 <NavbarLink
                   className="text-md font-semibold tracking-tight text-medium-gray lg:hover:underline lg:hover:decoration-medium-gray lg:hover:decoration-2 lg:hover:underline-offset-[5px]"
+                  as="link"
                   href="/"
                 >
                   <span className="sm:hidden">ŠTC</span>
@@ -45,7 +53,14 @@ const Navbar = () => {
                 </NavbarLink>
               </div>
               <div className="absolute inset-y-0 right-0 lg:hidden">
-                <NavbarToggle open={open} />
+                <Disclosure.Button className="inline-flex h-10 w-10 items-center justify-center text-lg text-black focus:outline-none focus-visible:outline-dashed focus-visible:outline-1 focus-visible:outline-black active:outline-dashed active:outline-1 active:outline-black">
+                  <Icon
+                    screenReaderLabel={`${
+                      open ? 'Zatvoriť' : 'Otvoriť'
+                    } hlavné menu`}
+                    icon={open ? CancelIcon : GlobalNavButtonIcon}
+                  />
+                </Disclosure.Button>
               </div>
             </div>
             <div className="hidden flex-grow items-center justify-between lg:flex">
@@ -55,6 +70,7 @@ const Navbar = () => {
                     <NavbarLink
                       className="text-sm font-normal tracking-normal text-black hover:underline hover:decoration-extra-dark-gray hover:decoration-2 hover:underline-offset-[5px]"
                       href={href}
+                      as="link"
                     >
                       {name}
                     </NavbarLink>
@@ -65,17 +81,22 @@ const Navbar = () => {
                 title="Registrácia do programu ŠTC"
                 variant="primary-solid"
                 href="/registracia"
+                as="link"
               >
                 Registrácia
               </Button>
             </div>
           </Container>
-          <Disclosure.Panel className="border-t bg-extra-light-gray">
+          <Disclosure.Panel className="border-t bg-extra-light-gray lg:hidden">
             <Container>
               <ul className="divide-y">
                 {navigation.map(({ name, href }) => (
                   <Disclosure.Button key={name} className="py-1.5" as="li">
-                    <NavbarLink href={href} className="w-full text-black">
+                    <NavbarLink
+                      className="w-full text-black"
+                      href={href}
+                      as="link"
+                    >
                       {name}
                     </NavbarLink>
                   </Disclosure.Button>
@@ -87,6 +108,7 @@ const Navbar = () => {
                   variant="primary-outline"
                   href="/registracia"
                   fullWidth={true}
+                  as="link"
                 >
                   Registrácia
                 </Button>

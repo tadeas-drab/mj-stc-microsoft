@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react';
 import Image from 'next/image';
 
 interface TrimesterCardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   imageSrc: string;
   imageAlt: string;
 }

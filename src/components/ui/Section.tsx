@@ -1,8 +1,9 @@
+import type { ReactNode } from 'react';
 import Container from './Container';
 import classNames from 'classnames';
 
 interface SectionProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   id?: string;
 }

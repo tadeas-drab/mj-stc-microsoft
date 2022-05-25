@@ -1,8 +1,9 @@
+import type { ElementType, ReactNode } from 'react';
 import classNames from 'classnames';
 
 interface ContainerProps {
-  as?: React.ElementType;
-  children: React.ReactNode;
+  as?: ElementType;
+  children: ReactNode;
   className?: string;
 }
 

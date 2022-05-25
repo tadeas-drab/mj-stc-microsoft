@@ -1,8 +1,9 @@
+import type { ReactNode } from 'react';
 import Navbar from '../ui/Navbar';
 import Footer from '../ui/Footer';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const Layout = ({ children }: LayoutProps) => {

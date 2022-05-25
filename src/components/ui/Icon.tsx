@@ -1,22 +1,23 @@
+import type { ISvgIconProps } from '@fluentui/react-icons-mdl2';
 import type { SvgIcon } from '../../types';
 
-interface IconProps {
-  className?: string;
+interface IconProps extends ISvgIconProps {
   screenReaderLabel?: string;
   icon: SvgIcon;
 }
 
 const Icon = ({
-  className,
+  'aria-hidden': hidden = true,
   screenReaderLabel,
   icon: IconComponent,
+  ...props
 }: IconProps) => {
   return (
     <>
       {screenReaderLabel && (
         <span className="sr-only">{screenReaderLabel}</span>
       )}
-      <IconComponent className={className} aria-hidden={true} />
+      <IconComponent {...props} aria-hidden={hidden} />
     </>
   );
 };

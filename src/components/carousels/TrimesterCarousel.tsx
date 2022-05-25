@@ -23,6 +23,7 @@ const TrimesterCarousel = () => {
         {navigation.map((item, index) => (
           <Button
             key={item}
+            as="button"
             fullWidth={true}
             onClick={() => swiper?.slideTo(index)}
             className={classNames(

@@ -1,9 +1,10 @@
+import type { ReactNode } from 'react';
 import classNames from 'classnames';
 import Image from 'next/image';
 
 interface AboutCardProps {
-  children: React.ReactNode;
   image?: { src: string; alt: string };
+  children: ReactNode;
   className?: string;
   title?: string;
 }

@@ -35,7 +35,10 @@ const Registration = ({ opened = false }: RegistrationProps) => {
             sa neboja výziev. Ak si myslíš, že patríš medzi nich, prihlás
             sa!
           </p>
-          <LearnMoreLink href="/registracia">
+          <LearnMoreLink
+            title="Registrácia do programu ŠTC"
+            href="/registracia"
+          >
             Prejsť na registráciu
           </LearnMoreLink>
         </div>

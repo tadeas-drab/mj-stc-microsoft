@@ -1,7 +1,7 @@
 import type { SvgIcon } from '../../types';
-import Anchor from '../ui/Anchor';
-import Icon from '../ui/Icon';
+import Button from '../ui/Button';
 import Image from 'next/image';
+import Icon from '../ui/Icon';
 
 interface ContactCardProps {
   name: string;
@@ -43,16 +43,17 @@ const ContactCard = ({
         <p className="mb-4 text-white">{position}</p>
         <div className="mb-1 flex space-x-2">
           {socials.map(({ name, href, icon }) => (
-            <Anchor
+            <Button
               className="flex h-8 w-8 items-center justify-center rounded-full bg-extra-light-gray text-sm transition-colors hover:bg-tertiary focus:outline-none"
               rel="noreferrer nofollow noopener"
               target="_blank"
               title={name}
               href={href}
               key={name}
+              as="link"
             >
               <Icon icon={icon} screenReaderLabel={name} />
-            </Anchor>
+            </Button>
           ))}
         </div>
       </div>

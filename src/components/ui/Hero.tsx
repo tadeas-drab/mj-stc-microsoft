@@ -1,10 +1,11 @@
 import Image, { StaticImageData } from 'next/image';
+import type { ReactNode } from 'react';
 import classNames from 'classnames';
 import Container from './Container';
 
 interface HeroProps {
+  children: ReactNode;
   backgroundPosition: 'top' | 'center';
-  children: React.ReactNode;
   imageSrc: StaticImageData;
   imageAlt: string;
   large?: boolean;
@@ -40,8 +41,6 @@ const Hero = ({
           src={imageSrc}
           alt={imageAlt}
           layout="fill"
-          height={1080}
-          width={1920}
         />
       </div>
       <Container className="py-12 drop-shadow-xl">{children}</Container>

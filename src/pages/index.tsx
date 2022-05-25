@@ -1,10 +1,7 @@
-import type {
-  NextPage,
-  GetStaticProps,
-  InferGetStaticPropsType,
-} from 'next';
-
+import type { NextPage, GetStaticProps } from 'next';
+import type { Quote } from '../types';
 import { fetchQuotes } from '../utils';
+
 import heroImage from '../../public/images/hero/home.webp';
 import aboutImage from '../../public/images/about.webp';
 import Image from 'next/image';
@@ -21,13 +18,15 @@ import Contact from '../components/sections/Contact';
 import TrimesterCarousel from '../components/carousels/TrimesterCarousel';
 import QuoteCarousel from '../components/carousels/QuoteCarousel';
 
-export const getStaticProps: GetStaticProps = async () => {
+interface HomeProps {
+  quotes: Quote[];
+}
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   return { props: { quotes: await fetchQuotes() } };
 };
 
-const Home: NextPage = ({
-  quotes,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage<HomeProps> = ({ quotes }) => {
   return (
     <>
       <Hero
