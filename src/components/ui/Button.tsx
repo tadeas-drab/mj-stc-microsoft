@@ -34,9 +34,9 @@ const Button = ({
   variant,
   ...props
 }: ButtonProps) => {
-  const rootClassName = classNames(className, {
+  const rootClassName = classNames(className, 'focus:outline-none', {
     'w-full': fullWidth,
-    'flex items-center justify-center focus:outline-none px-5': variant,
+    'flex items-center justify-center px-5': variant,
     'rounded-md border border-primary bg-primary py-1.5 text-sm font-semibold text-white hover:bg-secondary focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary hover:focus-visible:ring-offset-secondary active:text-tertiary':
       variant === 'primary-solid',
     'rounded-md border border-primary bg-transparent py-1.5 text-sm font-semibold text-primary hover:bg-primary hover:text-white focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-primary focus-visible:ring-offset-2 hover:focus-visible:ring-white hover:focus-visible:ring-offset-primary active:text-tertiary':

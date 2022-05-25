@@ -114,7 +114,7 @@ const Absolventi: NextPage<AbsolventiProps> = (props) => {
         <form className="mb-5 grid grid-cols-3 items-center gap-5">
           <div className="col-span-3 flex flex-wrap items-center gap-x-6 gap-y-2 lg:col-span-2">
             <Button
-              className="w-full py-1 text-left text-sm text-medium-gray decoration-black hover:text-black hover:underline focus:outline-none focus-visible:text-black focus-visible:underline active:text-black active:underline md:order-last md:inline-block md:w-auto"
+              className="w-full py-1 text-left text-sm text-medium-gray decoration-black hover:text-black hover:underline focus-visible:text-black focus-visible:underline active:text-black active:underline md:order-last md:inline-block md:w-auto"
               title="Resetovať všetky filtre"
               onClick={handleReset}
               type="reset"
@@ -172,7 +172,7 @@ const Absolventi: NextPage<AbsolventiProps> = (props) => {
                         as="li"
                       >
                         <Button
-                          className="px-2.5 text-sm focus:outline-none"
+                          className="px-2.5 text-sm"
                           title={`Zobraziť absolventov z roku ${year}`}
                           href={`#rocnik${year}`}
                           as="link"
