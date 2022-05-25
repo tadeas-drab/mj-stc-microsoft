@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import type {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
@@ -44,7 +46,7 @@ const Button = ({
   });
 
   if (props.as === 'link') {
-    const { href, ...rest } = props;
+    const { as: _, href, ...rest } = props;
 
     return (
       <Link href={href} passHref={true}>
@@ -53,7 +55,8 @@ const Button = ({
     );
   }
 
-  return <button className={rootClassName} {...props} />;
+  const { as: _, ...rest } = props;
+  return <button className={rootClassName} {...rest} />;
 };
 
 export default Button;
