@@ -9,6 +9,13 @@ import Button from '../ui/Button';
 import Image from 'next/image';
 import Icon from '../ui/Icon';
 
+const socials = {
+  linkedin: LinkedInLogoIcon,
+  instagram: InstagramLogoIcon,
+};
+
+type SocialTypes = keyof typeof socials;
+
 const GraduateCard = ({
   graduateName,
   graduationYear,
@@ -16,10 +23,6 @@ const GraduateCard = ({
   graduateSocials,
   isAmbassador,
 }: Omit<Graduate, 'id' | 'graduateOrder'>) => {
-  const socials: {
-    [key: string]: string;
-  } = JSON.parse(graduateSocials);
-
   return (
     <article className="flex space-x-4 rounded-md bg-extra-light-gray p-4">
       <div className="relative flex h-full flex-grow flex-col">
@@ -30,28 +33,22 @@ const GraduateCard = ({
           {graduationYear} | {graduationTheme}
         </p>
         <ul className="-mx-1 mt-auto flex">
-          {Object.entries(socials).map(
+          {Object.entries(JSON.parse(graduateSocials)).map(
             ([social, href]) =>
               href && (
                 <li key={social}>
                   <Button
                     className="group p-1 focus:outline-none"
                     rel="noreferrer nofollow noopener"
+                    href={href as string}
                     target="_blank"
                     title={social}
-                    href={href}
                     as="link"
                   >
                     <Icon
                       className="text-medium-gray group-hover:text-black group-focus-visible:text-black"
+                      icon={socials[social as SocialTypes] ?? GlobeIcon}
                       screenReaderLabel={social}
-                      icon={
-                        social === 'linkedin'
-                          ? LinkedInLogoIcon
-                          : social === 'instagram'
-                          ? InstagramLogoIcon
-                          : GlobeIcon
-                      }
                     />
                   </Button>
                 </li>

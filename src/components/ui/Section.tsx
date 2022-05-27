@@ -1,18 +1,24 @@
-import type { ReactNode } from 'react';
+import type { ElementType, ReactNode } from 'react';
 import Container from './Container';
 import classNames from 'classnames';
 
 interface SectionProps {
+  as?: ElementType;
   children: ReactNode;
   className?: string;
   id?: string;
 }
 
-const Section = ({ children, className, id }: SectionProps) => {
+const Section = ({
+  as: Component = 'section',
+  className,
+  children,
+  id,
+}: SectionProps) => {
   return (
-    <section id={id} className={classNames('scroll-m-12', className)}>
+    <Component id={id} className={classNames('scroll-m-12', className)}>
       <Container className="py-12">{children}</Container>
-    </section>
+    </Component>
   );
 };
 

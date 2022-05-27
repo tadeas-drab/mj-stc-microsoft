@@ -1,32 +1,29 @@
-import type { NextPage, GetStaticProps } from 'next';
-import type { Quote } from '../types';
+import type { InferGetStaticPropsType } from 'next';
 import { fetchQuotes } from '../utils';
+
+import TrimesterCarousel from '../components/carousels/TrimesterCarousel';
+import QuoteCarousel from '../components/carousels/QuoteCarousel';
 
 import heroImage from '../../public/images/hero/home.webp';
 import aboutImage from '../../public/images/about.webp';
 import Image from 'next/image';
 
+import Registration from '../components/sections/Registration';
+import References from '../components/sections/References';
 import LearnMoreLink from '../components/ui/LearnMoreLink';
+import Contact from '../components/sections/Contact';
+import BaseCard from '../components/cards/BaseCard';
 import CheckList from '../components/ui/CheckList';
 import Section from '../components/ui/Section';
 import Hero from '../components/ui/Hero';
 
-import AboutCard from '../components/cards/AboutCard';
-import Registration from '../components/sections/Registration';
-import Contact from '../components/sections/Contact';
-
-import TrimesterCarousel from '../components/carousels/TrimesterCarousel';
-import QuoteCarousel from '../components/carousels/QuoteCarousel';
-
-interface HomeProps {
-  quotes: Quote[];
-}
-
-export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+export const getStaticProps = async () => {
   return { props: { quotes: await fetchQuotes() } };
 };
 
-const Home: NextPage<HomeProps> = ({ quotes }) => {
+const Home = ({
+  quotes,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Hero
@@ -96,7 +93,7 @@ const Home: NextPage<HomeProps> = ({ quotes }) => {
           <TrimesterCarousel />
         </div>
         <div className="grid grid-cols-2 items-center gap-5">
-          <AboutCard
+          <BaseCard
             title="Letná škola"
             className="col-span-2 xl:col-span-1"
             image={{
@@ -104,13 +101,15 @@ const Home: NextPage<HomeProps> = ({ quotes }) => {
               alt: 'Letná škola',
             }}
           >
-            Každý rok cez leto organizujeme niekoľkodňové stretnutie
-            študentov v podode Letnej školy, kde majú zabezpečený program
-            od špeciálnych hostí či zamestnancov spoločnosti Microsoft.
-            Zároveň študenti tvoria svoj unikátny projekt, ktorý na záver
-            Letnej školy odprezentujú porote.
-          </AboutCard>
-          <AboutCard
+            <p className="leading-relaxed text-black">
+              Každý rok cez leto organizujeme niekoľkodňové stretnutie
+              študentov v podode Letnej školy, kde majú zabezpečený program
+              od špeciálnych hostí či zamestnancov spoločnosti Microsoft.
+              Zároveň študenti tvoria svoj unikátny projekt, ktorý na záver
+              Letnej školy odprezentujú porote.
+            </p>
+          </BaseCard>
+          <BaseCard
             title="Microsoft Learn Student Ambassadors"
             className="col-span-2 xl:col-span-1"
             image={{
@@ -118,11 +117,14 @@ const Home: NextPage<HomeProps> = ({ quotes }) => {
               alt: 'Microsoft Learn Student Ambassadors logo',
             }}
           >
-            V spolupráci so spoločnosťou Microsoft môžu študenti zostať i
-            naďalej a môžu postúpiť do programu určeného predovšetkým pre
-            vysokoškolákov - Microsoft Learn Student Ambassadors. Tento
-            program im pomôže pri zviditeľnení mena a získaní ďalšej praxe.
-          </AboutCard>
+            <p className="leading-relaxed text-black">
+              V spolupráci so spoločnosťou Microsoft môžu študenti zostať i
+              naďalej a môžu postúpiť do programu určeného predovšetkým pre
+              vysokoškolákov - Microsoft Learn Student Ambassadors. Tento
+              program im pomôže pri zviditeľnení mena a získaní ďalšej
+              praxe.
+            </p>
+          </BaseCard>
         </div>
       </Section>
       <Section id="citaty" className="bg-primary">
@@ -133,6 +135,7 @@ const Home: NextPage<HomeProps> = ({ quotes }) => {
       </Section>
       <Registration />
       <Contact />
+      <References />
     </>
   );
 };

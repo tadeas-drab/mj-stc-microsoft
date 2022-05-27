@@ -8,11 +8,11 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Navbar />
       <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 

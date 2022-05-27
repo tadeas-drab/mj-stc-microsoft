@@ -20,7 +20,7 @@ const navigation = [
 
 const Navbar = () => {
   return (
-    <Disclosure className="sticky top-0 z-50 bg-white shadow" as="nav">
+    <Disclosure className="sticky top-0 z-40 bg-white shadow" as="nav">
       {({ open }) => (
         <>
           <Container className="flex h-14 items-center space-x-2 xl:space-x-4">
