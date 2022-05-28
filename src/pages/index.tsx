@@ -27,9 +27,8 @@ const Home = ({
   return (
     <>
       <Hero
-        imageSrc={heroImage}
         imageAlt="Naštartuj svoju kariéru!"
-        backgroundPosition="top"
+        imageSrc={heroImage}
         large={true}
       >
         <h1 className="mb-4 text-xl font-semibold text-white md:mb-6 md:text-2xl">

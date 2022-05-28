@@ -5,14 +5,12 @@ import Container from './Container';
 
 interface HeroProps {
   children: ReactNode;
-  backgroundPosition: 'top' | 'center';
   imageSrc: StaticImageData;
   imageAlt: string;
   large?: boolean;
 }
 
 const Hero = ({
-  backgroundPosition,
   children,
   imageSrc,
   imageAlt,
@@ -31,10 +29,7 @@ const Hero = ({
         )}
       >
         <Image
-          className={classNames({
-            'object-center': backgroundPosition === 'center',
-            'object-top': backgroundPosition === 'top',
-          })}
+          className="object-top"
           placeholder="blur"
           objectFit="cover"
           priority={true}

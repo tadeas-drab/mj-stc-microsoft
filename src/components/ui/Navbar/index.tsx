@@ -88,32 +88,39 @@ const Navbar = () => {
             </div>
           </Container>
           <Disclosure.Panel className="border-t bg-extra-light-gray lg:hidden">
-            <Container>
-              <ul className="divide-y">
-                {navigation.map(({ name, href }) => (
-                  <Disclosure.Button key={name} className="py-1.5" as="li">
-                    <NavbarLink
-                      className="w-full text-black"
-                      href={href}
-                      as="link"
+            {({ close }) => (
+              <Container>
+                <ul className="divide-y">
+                  {navigation.map(({ name, href }) => (
+                    <Disclosure.Button
+                      className="py-1.5"
+                      key={name}
+                      as="li"
                     >
-                      {name}
-                    </NavbarLink>
-                  </Disclosure.Button>
-                ))}
-              </ul>
-              <Disclosure.Button className="pt-1 pb-4" as="div">
-                <Button
-                  title="Registrácia do programu ŠTC"
-                  variant="primary-outline"
-                  href="/registracia"
-                  fullWidth={true}
-                  as="link"
-                >
-                  Registrácia
-                </Button>
-              </Disclosure.Button>
-            </Container>
+                      <NavbarLink
+                        onClick={() => close()}
+                        className="w-full text-black"
+                        href={href}
+                        as="link"
+                      >
+                        {name}
+                      </NavbarLink>
+                    </Disclosure.Button>
+                  ))}
+                </ul>
+                <Disclosure.Button className="pt-1 pb-4" as="div">
+                  <Button
+                    title="Registrácia do programu ŠTC"
+                    variant="primary-outline"
+                    href="/registracia"
+                    fullWidth={true}
+                    as="link"
+                  >
+                    Registrácia
+                  </Button>
+                </Disclosure.Button>
+              </Container>
+            )}
           </Disclosure.Panel>
         </>
       )}

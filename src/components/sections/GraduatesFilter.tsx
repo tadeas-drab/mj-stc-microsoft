@@ -146,7 +146,7 @@ const GraduatesFilter = ({
                 {years.map((year) => (
                   <Menu.Item key={year}>
                     <Button
-                      className="block px-2.5 text-sm hover:bg-gray focus:outline-none"
+                      className="block px-3 py-1 text-sm hover:bg-gray focus:outline-none"
                       title={`Zobraziť absolventov z roku ${year}`}
                       href={`#rocnik${year}`}
                       as="link"

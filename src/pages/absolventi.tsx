@@ -23,9 +23,8 @@ const Absolventi = ({
     <>
       <NextSeo title="Absolventi" />
       <Hero
-        imageSrc={heroImage}
         imageAlt="Absolventi programu"
-        backgroundPosition="top"
+        imageSrc={heroImage}
         large={false}
       >
         <h1 className="mb-4 text-xl font-semibold text-white md:mb-6 md:text-2xl">
