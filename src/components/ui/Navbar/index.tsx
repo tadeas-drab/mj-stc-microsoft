@@ -112,6 +112,7 @@ const Navbar = () => {
                   <Button
                     title="Registrácia do programu ŠTC"
                     variant="primary-outline"
+                    onClick={() => close()}
                     href="/registracia"
                     fullWidth={true}
                     as="link"
