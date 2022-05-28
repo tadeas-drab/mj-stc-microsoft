@@ -10,7 +10,10 @@ import Section from '../components/ui/Section';
 import Hero from '../components/ui/Hero';
 
 export const getStaticProps = async () => {
-  return { props: await fetchGraduates() };
+  return {
+    props: await fetchGraduates(),
+    revalidate: 3600, // 1 hour to re-generate the page.
+  };
 };
 
 const Absolventi = ({

@@ -18,7 +18,10 @@ import Section from '../components/ui/Section';
 import Hero from '../components/ui/Hero';
 
 export const getStaticProps = async () => {
-  return { props: { quotes: await fetchQuotes() } };
+  return {
+    props: { quotes: await fetchQuotes() },
+    revalidate: 3600, // 1 hour to re-generate the page.
+  };
 };
 
 const Home = ({
