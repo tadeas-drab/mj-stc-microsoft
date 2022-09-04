@@ -5,8 +5,13 @@ import Contact from '../components/sections/Contact';
 import BaseCard from '../components/cards/BaseCard';
 import Section from '../components/ui/Section';
 import Hero from '../components/ui/Hero';
+import { useEffect } from 'react';
+import TagManager from 'react-gtm-module';
 
 const Registracia = () => {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'G-JTMTQ07LEC' });
+  }, []);
   return (
     <>
       <NextSeo title="Registrácia" />

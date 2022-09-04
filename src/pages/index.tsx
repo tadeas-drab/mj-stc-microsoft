@@ -16,6 +16,8 @@ import BaseCard from '../components/cards/BaseCard';
 import CheckList from '../components/ui/CheckList';
 import Section from '../components/ui/Section';
 import Hero from '../components/ui/Hero';
+import { useEffect } from 'react';
+import TagManager from 'react-gtm-module';
 
 export const getStaticProps = async () => {
   return {
@@ -27,6 +29,10 @@ export const getStaticProps = async () => {
 const Home = ({
   quotes,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'G-JTMTQ07LEC' });
+  }, []);
+
   return (
     <>
       <Hero
