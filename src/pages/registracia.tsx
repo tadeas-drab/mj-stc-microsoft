@@ -21,7 +21,32 @@ const Registracia = () => {
         </h1>
       </Hero>
       <Section className="bg-white" as="div">
-        <div className="-my-6">
+        <div className="my-6">
+          <BaseCard>
+            <p className="mb-4 leading-relaxed text-black">
+              Registráciu do programu Študentské Trénerské Centrum Microsoft organizuje komunita Microsoft Learn Student
+              Ambassadors Slovensko. Údaje sú spracovávané pomocou formulára Microsoft Forms patriacemu kontu v komunite
+              Student Ambassadors Slovensko. Plné znenie spracovania osobných údajov nájdete na konci formulára.
+            </p>
+            <p className="leading-relaxed text-black">
+              V prípade nefunkčnosti formulára, <strong><a href="https://forms.office.com/r/WFtNsJs9ik" target="_blank">klikni sem</a></strong> pre jeho vyplnenie v novom okne.
+            </p>
+          </BaseCard>
+        </div>
+        <div className="my-6">
+          <iframe className='w-full' height="1024px" src="https://forms.office.com/r/WFtNsJs9ik?embed=true" frameBorder={0} marginWidth={0} marginHeight={0}
+            style={{ border: 'none', maxWidth: '100%', maxHeight: '100vh' }} allowFullScreen> </iframe>
+        </div>
+      </Section>
+      <Contact />
+      <References />
+    </>
+  );
+};
+
+export default Registracia;
+
+/*
           <BaseCard>
             <p className="mb-4 leading-relaxed text-black">
               Ďakujeme za tvoj prejavený záujem registrovať sa do programu
@@ -35,12 +60,4 @@ const Registracia = () => {
               nižšie.
             </p>
           </BaseCard>
-        </div>
-      </Section>
-      <Contact />
-      <References />
-    </>
-  );
-};
-
-export default Registracia;
+*/

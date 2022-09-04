@@ -9,7 +9,7 @@ interface RegistrationProps {
   opened?: boolean;
 }
 
-const Registration = ({ opened = false }: RegistrationProps) => {
+const Registration = ({ opened = true }: RegistrationProps) => {
   return (
     <Section className="bg-white">
       <div className="grid grid-cols-3 items-center gap-2">
