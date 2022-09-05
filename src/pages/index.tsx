@@ -105,7 +105,7 @@ const Home = ({
           >
             <p className="leading-relaxed text-black">
               Každý rok cez leto organizujeme niekoľkodňové stretnutie
-              študentov v podode Letnej školy, kde majú zabezpečený program
+              študentov v podobe Letnej školy, kde majú zabezpečený program
               od špeciálnych hostí či zamestnancov spoločnosti Microsoft.
               Zároveň študenti tvoria svoj unikátny projekt, ktorý na záver
               Letnej školy odprezentujú porote.
