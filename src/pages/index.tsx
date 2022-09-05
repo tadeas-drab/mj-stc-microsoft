@@ -62,12 +62,6 @@ const Home = ({
                 svoje nadobudnuté znalosti ďalším.
               </p>
               <p className="leading-relaxed text-black">
-                Študentské Trénerské Centrum (ŠTC) je program najmä pre
-                stredoškolských študentov, ktorí sa chcú zdokonaľovať v
-                oblasti informačných technológií a majú záujem poskytovať
-                svoje nadobudnuté znalosti ďalším.
-              </p>
-              <p className="leading-relaxed text-black">
                 Organizátorom aktivity je spoločnosť Microsoft, ktorá
                 pripravuje študentov na zaujímavú pracovnú kariéru a na trh
                 práce. Cieľom celého programu je pripraviť študentov v
