@@ -45,3 +45,8 @@ export type GraduateYear = {
   students: Graduate[];
   year: number;
 };
+
+export type RegistrationStatus = {
+  isOpen: number;
+  link: string;
+};
