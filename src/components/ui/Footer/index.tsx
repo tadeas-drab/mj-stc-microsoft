@@ -2,6 +2,11 @@ import FooterLink from './FooterLink';
 import Container from '../Container';
 import Icon from '../Icon';
 
+import { GlobeIcon, FacebookLogoIcon } from '@fluentui/react-icons-mdl2';
+import InstagramLogoIcon from '../../icons/InstagramLogoIcon';
+import LinkedInLogoIcon from '../../icons/LinkedInLogoIcon';
+import YouTubeLogoIcon from '../../icons/YouTubeLogoIcon';
+
 const footer = [
   {
     title: 'Študentské Trénerské Centrum',
