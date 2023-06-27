@@ -10,7 +10,7 @@ const contact = [
   {
     name: 'Zuzana Molčanová',
     image: '/images/zuzana-molcanova.jpeg',
-    description: 'Education Industry Executive',
+    description: 'Education Industry Account Manager',
     position: 'Microsoft',
     socials: [
       {
@@ -28,12 +28,12 @@ const contact = [
   {
     name: 'Tomáš Odráška',
     image: '/images/tomas-odraska.jpeg',
-    description: 'Surface Commercial Product Marketing Manager',
-    position: 'Microsoft',
+    description: 'Program Lead',
+    position: 'ŠTC Microsoft',
     socials: [
       {
         name: 'E-mail',
-        href: 'mailto:a-todraska@microsoft.com',
+        href: 'mailto:tomas.odraska@stcmicrosoft.sk',
         icon: MailIcon,
       },
       {

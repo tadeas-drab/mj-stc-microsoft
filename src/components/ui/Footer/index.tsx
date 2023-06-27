@@ -86,11 +86,6 @@ const footer = [
         href: 'https://www.instagram.com/studentambassadorsslovensko/',
         icon: InstagramLogoIcon,
       },
-      {
-        name: 'YouTube',
-        href: 'https://www.youtube.com/channel/UCYWW4gMa5LoA75FdLdBOJJA',
-        icon: YouTubeLogoIcon,
-      },
     ],
   },
 ];
