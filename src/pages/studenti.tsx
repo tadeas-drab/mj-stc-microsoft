@@ -3,13 +3,14 @@ import type { BaseStudent, Student } from '../types';
 
 import { fetchStudent, fetchStudents } from '../utils';
 import { NextSeo } from 'next-seo';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import heroImage from '../../public/images/hero/students.webp';
 import StudentModal from '../components/sections/StudentModal';
 import StudentCard from '../components/cards/StudentCard';
 import Section from '../components/ui/Section';
 import Hero from '../components/ui/Hero';
+import TagManager from 'react-gtm-module';
 
 export const getStaticProps = async () => {
   return {
@@ -23,6 +24,10 @@ const Studenti = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [student, setStudent] = useState<Student | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'G-JTMTQ07LEC' });
+  }, []);
 
   /**
    * Opens the modal with the given student.

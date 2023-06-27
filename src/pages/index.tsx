@@ -1,5 +1,5 @@
 import type { InferGetStaticPropsType } from 'next';
-import { fetchQuotes } from '../utils';
+import { fetchQuotes, fetchRegistration } from '../utils';
 
 import TrimesterCarousel from '../components/carousels/TrimesterCarousel';
 import QuoteCarousel from '../components/carousels/QuoteCarousel';
@@ -16,17 +16,24 @@ import BaseCard from '../components/cards/BaseCard';
 import CheckList from '../components/ui/CheckList';
 import Section from '../components/ui/Section';
 import Hero from '../components/ui/Hero';
+import { useEffect } from 'react';
+import TagManager from 'react-gtm-module';
 
 export const getStaticProps = async () => {
   return {
-    props: { quotes: await fetchQuotes() },
+    props: { quotes: await fetchQuotes(), registration: await fetchRegistration() },
     revalidate: 3600, // 1 hour to re-generate the page.
   };
 };
 
 const Home = ({
   quotes,
+  registration
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'G-JTMTQ07LEC' });
+  }, []);
+
   return (
     <>
       <Hero
@@ -49,12 +56,6 @@ const Home = ({
               O programe
             </h2>
             <div className="mb-6 space-y-4">
-              <p className="leading-relaxed text-black">
-                Študentské Trénerské Centrum (ŠTC) je program najmä pre
-                stredoškolských študentov, ktorí sa chcú zdokonaľovať v
-                oblasti informačných technológií a majú záujem poskytovať
-                svoje nadobudnuté znalosti ďalším.
-              </p>
               <p className="leading-relaxed text-black">
                 Študentské Trénerské Centrum (ŠTC) je program najmä pre
                 stredoškolských študentov, ktorí sa chcú zdokonaľovať v
@@ -105,7 +106,7 @@ const Home = ({
           >
             <p className="leading-relaxed text-black">
               Každý rok cez leto organizujeme niekoľkodňové stretnutie
-              študentov v podode Letnej školy, kde majú zabezpečený program
+              študentov v podobe Letnej školy, kde majú zabezpečený program
               od špeciálnych hostí či zamestnancov spoločnosti Microsoft.
               Zároveň študenti tvoria svoj unikátny projekt, ktorý na záver
               Letnej školy odprezentujú porote.
@@ -135,7 +136,7 @@ const Home = ({
         </h2>
         <QuoteCarousel quotes={quotes} />
       </Section>
-      <Registration />
+      <Registration opened={registration.isOpen == 1} />
       <Contact />
       <References />
     </>

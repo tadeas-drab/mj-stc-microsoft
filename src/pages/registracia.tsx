@@ -2,11 +2,25 @@ import { NextSeo } from 'next-seo';
 import heroImage from '../../public/images/hero/registration.webp';
 import References from '../components/sections/References';
 import Contact from '../components/sections/Contact';
-import BaseCard from '../components/cards/BaseCard';
 import Section from '../components/ui/Section';
 import Hero from '../components/ui/Hero';
+import { useEffect } from 'react';
+import TagManager from 'react-gtm-module';
+import { fetchRegistration } from '../utils';
+import { InferGetServerSidePropsType } from 'next';
+import OpenRegistration from '../components/sections/subsections/OpenRegistration';
+import ClosedRegistration from '../components/sections/subsections/ClosedRegistration';
 
-const Registracia = () => {
+export const getServerSideProps = async () => {
+  return {
+    props: { registration: await fetchRegistration() }
+  };
+};
+
+const Registracia = ({ registration, }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'G-JTMTQ07LEC' });
+  }, []);
   return (
     <>
       <NextSeo title="Registrácia" />
@@ -21,21 +35,10 @@ const Registracia = () => {
         </h1>
       </Hero>
       <Section className="bg-white" as="div">
-        <div className="-my-6">
-          <BaseCard>
-            <p className="mb-4 leading-relaxed text-black">
-              Ďakujeme za tvoj prejavený záujem registrovať sa do programu
-              ŠTC. Bohužiaľ, momentálne je registrácia zatvorená. Ale
-              nezúfaj, v septembri 2022 otvárame registráciu pre ďalší
-              ročník. Ak chceš zostať v obraze, sleduj naše sociálne siete,
-              ktoré nájdeš nižšie.
-            </p>
-            <p className="leading-relaxed text-black">
-              Ak by si mal akékoľvek otázky, neváhaj nás kontaktovať
-              nižšie.
-            </p>
-          </BaseCard>
-        </div>
+        {registration.isOpen == 1 ?
+          <OpenRegistration link={registration.link} />
+          :
+          <ClosedRegistration />}
       </Section>
       <Contact />
       <References />

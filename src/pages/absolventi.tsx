@@ -1,13 +1,14 @@
 import type { InferGetStaticPropsType } from 'next';
 import { fetchGraduates } from '../utils';
 import { NextSeo } from 'next-seo';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import heroImage from '../../public/images/hero/students.webp';
 import GraduatesFilter from '../components/sections/GraduatesFilter';
 import GraduateCard from '../components/cards/GraduateCard';
 import Section from '../components/ui/Section';
 import Hero from '../components/ui/Hero';
+import TagManager from 'react-gtm-module';
 
 export const getStaticProps = async () => {
   return {
@@ -21,6 +22,10 @@ const Absolventi = ({
   years,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [students, setStudents] = useState(graduates);
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'G-JTMTQ07LEC' });
+  }, []);
 
   return (
     <>

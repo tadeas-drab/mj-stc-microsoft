@@ -5,6 +5,7 @@ import type {
   Graduate,
   Student,
   Quote,
+  RegistrationStatus,
 } from '../types';
 
 /**
@@ -83,4 +84,14 @@ export const fetchQuotes = async (): Promise<Quote[]> => {
   return quotes.sort((a, b) => {
     return a.quoteOrder - b.quoteOrder;
   });
+};
+
+/**
+ * Fetch registration status
+ * @returns Registration status
+ */
+export const fetchRegistration = async (): Promise<RegistrationStatus> => {
+  const response = await fetch(api(`stc/registration`));
+  const regStatus: RegistrationStatus = await response.json();
+  return regStatus;
 };
