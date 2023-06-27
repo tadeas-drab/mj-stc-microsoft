@@ -9,7 +9,7 @@ import Icon from '../ui/Icon';
 const contact = [
   {
     name: 'Zuzana Molčanová',
-    image: '/images/zuzana-molcanova.jpeg',
+    image: '/images/contact/zuzana-molcanova.webp',
     description: 'Education Industry Account Manager',
     position: 'Microsoft',
     socials: [
@@ -58,6 +58,7 @@ const Contact = () => {
         title="Napíšte nám správu!"
         variant="contact-solid"
         fullWidth={true}
+        as="link"
       >
         <Icon icon={MailIcon} className="mr-2" />
         info@stcmicrosoft.sk

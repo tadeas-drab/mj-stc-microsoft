@@ -23,6 +23,7 @@ const TrimesterCarousel = () => {
         {navigation.map((item, index) => (
           <Button
             key={item}
+            as="button"
             fullWidth={true}
             onClick={() => swiper?.slideTo(index)}
             className={classNames(
@@ -46,7 +47,7 @@ const TrimesterCarousel = () => {
       >
         <SwiperSlide style={{ height: 'auto' }}>
           <TrimesterCard
-            imageSrc="/images/trimester/trimester-1.png"
+            imageSrc="/images/trimester/trimester-1.webp"
             imageAlt={navigation[0]}
           >
             <p className="mb-5 leading-relaxed text-black">
@@ -71,7 +72,7 @@ const TrimesterCarousel = () => {
         </SwiperSlide>
         <SwiperSlide style={{ height: 'auto' }}>
           <TrimesterCard
-            imageSrc="/images/trimester/trimester-2.png"
+            imageSrc="/images/trimester/trimester-2.webp"
             imageAlt={navigation[1]}
           >
             <p className="mb-5 leading-relaxed text-black">
@@ -92,7 +93,7 @@ const TrimesterCarousel = () => {
         </SwiperSlide>
         <SwiperSlide style={{ height: 'auto' }}>
           <TrimesterCard
-            imageSrc="/images/trimester/trimester-3.png"
+            imageSrc="/images/trimester/trimester-3.webp"
             imageAlt={navigation[2]}
           >
             <p className="mb-5 leading-relaxed text-black">
@@ -118,7 +119,7 @@ const TrimesterCarousel = () => {
         </SwiperSlide>
         <SwiperSlide style={{ height: 'auto' }}>
           <TrimesterCard
-            imageSrc="/images/trimester/trimester-4.png"
+            imageSrc="/images/trimester/trimester-4.webp"
             imageAlt={navigation[3]}
           >
             <p className="mb-5 leading-relaxed text-black">

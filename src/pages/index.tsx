@@ -1,46 +1,38 @@
-import type {
-  NextPage,
-  GetStaticProps,
-  InferGetStaticPropsType,
-} from 'next';
-
+import type { InferGetStaticPropsType } from 'next';
 import { fetchQuotes } from '../utils';
-import Image from 'next/image';
-import Head from 'next/head';
-
-import LearnMoreLink from '../components/ui/LearnMoreLink';
-import CheckList from '../components/ui/CheckList';
-import Section from '../components/ui/Section';
-import Hero from '../components/ui/Hero';
-
-import AboutCard from '../components/cards/AboutCard';
-import Registration from '../components/sections/Registration';
-import Contact from '../components/sections/Contact';
 
 import TrimesterCarousel from '../components/carousels/TrimesterCarousel';
 import QuoteCarousel from '../components/carousels/QuoteCarousel';
 
-export const getStaticProps: GetStaticProps = async () => {
-  return { props: { quotes: await fetchQuotes() } };
+import heroImage from '../../public/images/hero/home.webp';
+import aboutImage from '../../public/images/about.webp';
+import Image from 'next/image';
+
+import Registration from '../components/sections/Registration';
+import References from '../components/sections/References';
+import LearnMoreLink from '../components/ui/LearnMoreLink';
+import Contact from '../components/sections/Contact';
+import BaseCard from '../components/cards/BaseCard';
+import CheckList from '../components/ui/CheckList';
+import Section from '../components/ui/Section';
+import Hero from '../components/ui/Hero';
+
+export const getStaticProps = async () => {
+  return {
+    props: { quotes: await fetchQuotes() },
+    revalidate: 3600, // 1 hour to re-generate the page.
+  };
 };
 
-const Home: NextPage = ({
+const Home = ({
   quotes,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <Head>
-        <title>ŠTC Microsoft</title>
-        <meta name="description" content="ŠTC Microsoft" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Hero
+        imageAlt="Naštartuj svoju kariéru!"
+        imageSrc={heroImage}
         large={true}
-        backgroundPosition="top"
-        backgroundImage={{
-          alt: 'Naštartuj svoju kariéru!',
-          src: '/images/hero/home.webp',
-        }}
       >
         <h1 className="mb-4 text-xl font-semibold text-white md:mb-6 md:text-2xl">
           <span className="block">Naštartuj</span>{' '}
@@ -89,10 +81,11 @@ const Home: NextPage = ({
           </div>
           <div className="col-span-2 lg:col-span-1">
             <Image
-              src="/images/about.png"
+              src={aboutImage}
               alt="O programe Microsoft ŠTC"
               objectFit="contain"
               layout="responsive"
+              placeholder="blur"
               height={600}
               width={700}
             />
@@ -102,33 +95,38 @@ const Home: NextPage = ({
           <TrimesterCarousel />
         </div>
         <div className="grid grid-cols-2 items-center gap-5">
-          <AboutCard
+          <BaseCard
             title="Letná škola"
             className="col-span-2 xl:col-span-1"
             image={{
-              src: '/images/summer-school.png',
+              src: '/images/summer-school.webp',
               alt: 'Letná škola',
             }}
           >
-            Každý rok cez leto organizujeme niekoľkodňové stretnutie
-            študentov v podode Letnej školy, kde majú zabezpečený program
-            od špeciálnych hostí či zamestnancov spoločnosti Microsoft.
-            Zároveň študenti tvoria svoj unikátny projekt, ktorý na záver
-            Letnej školy odprezentujú porote.
-          </AboutCard>
-          <AboutCard
+            <p className="leading-relaxed text-black">
+              Každý rok cez leto organizujeme niekoľkodňové stretnutie
+              študentov v podode Letnej školy, kde majú zabezpečený program
+              od špeciálnych hostí či zamestnancov spoločnosti Microsoft.
+              Zároveň študenti tvoria svoj unikátny projekt, ktorý na záver
+              Letnej školy odprezentujú porote.
+            </p>
+          </BaseCard>
+          <BaseCard
             title="Microsoft Learn Student Ambassadors"
             className="col-span-2 xl:col-span-1"
             image={{
-              src: '/images/mlsa-logo.png',
+              src: '/images/logo/mlsa.png',
               alt: 'Microsoft Learn Student Ambassadors logo',
             }}
           >
-            V spolupráci so spoločnosťou Microsoft môžu študenti zostať i
-            naďalej a môžu postúpiť do programu určeného predovšetkým pre
-            vysokoškolákov - Microsoft Learn Student Ambassadors. Tento
-            program im pomôže pri zviditeľnení mena a získaní ďalšej praxe.
-          </AboutCard>
+            <p className="leading-relaxed text-black">
+              V spolupráci so spoločnosťou Microsoft môžu študenti zostať i
+              naďalej a môžu postúpiť do programu určeného predovšetkým pre
+              vysokoškolákov - Microsoft Learn Student Ambassadors. Tento
+              program im pomôže pri zviditeľnení mena a získaní ďalšej
+              praxe.
+            </p>
+          </BaseCard>
         </div>
       </Section>
       <Section id="citaty" className="bg-primary">
@@ -137,8 +135,9 @@ const Home: NextPage = ({
         </h2>
         <QuoteCarousel quotes={quotes} />
       </Section>
-      <Registration opened={false} />
+      <Registration />
       <Contact />
+      <References />
     </>
   );
 };

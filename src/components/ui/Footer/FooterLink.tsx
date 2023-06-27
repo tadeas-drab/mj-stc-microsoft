@@ -1,9 +1,9 @@
-import Anchor, { AnchorProps } from '../Anchor';
+import Button, { ButtonProps } from '../Button';
 import classNames from 'classnames';
 
-const FooterLink = ({ className, ...props }: AnchorProps) => {
+const FooterLink = ({ className, ...props }: ButtonProps) => {
   return (
-    <Anchor
+    <Button
       {...props}
       className={classNames(
         'inline-flex items-center text-extra-dark-gray decoration-black hover:text-black hover:underline focus:outline-none focus-visible:text-black focus-visible:underline active:text-black active:underline',

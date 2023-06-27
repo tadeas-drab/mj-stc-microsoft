@@ -1,21 +1,22 @@
+import type { ReactNode } from 'react';
 import classNames from 'classnames';
 import Image from 'next/image';
 
-interface AboutCardProps {
-  children: React.ReactNode;
+interface BaseCardProps {
   image?: { src: string; alt: string };
+  children: ReactNode;
   className?: string;
   title?: string;
 }
 
-const AboutCard = ({
-  children,
+const BaseCard = ({
   image,
+  children,
   className,
   title,
-}: AboutCardProps) => {
+}: BaseCardProps) => {
   return (
-    <article
+    <div
       className={classNames(
         'rounded-md bg-extra-light-gray p-5',
         className
@@ -35,11 +36,11 @@ const AboutCard = ({
         )}
         <div className="inline flex-grow space-y-2 text-black">
           {title && <h3 className="text-md font-semibold">{title}</h3>}
-          <p className="leading-relaxed">{children}</p>
+          {children}
         </div>
       </div>
-    </article>
+    </div>
   );
 };
 
-export default AboutCard;
+export default BaseCard;
