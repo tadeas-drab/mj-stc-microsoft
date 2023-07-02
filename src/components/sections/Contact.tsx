@@ -27,7 +27,7 @@ const contact = [
   },
   {
     name: 'Tomáš Odráška',
-    image: '/images/tomas-odraska.jpeg',
+    image: '/images/contact/tomas-odraska.webp',
     description: 'Program Lead',
     position: 'ŠTC Microsoft',
     socials: [
