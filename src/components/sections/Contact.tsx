@@ -8,19 +8,19 @@ import Icon from '../ui/Icon';
 
 const contact = [
   {
-    name: 'Zuzana Molčanová',
-    image: '/images/contact/zuzana-molcanova.webp',
-    description: 'Education Industry Account Manager',
+    name: 'Martin Tatar',
+    image: '/images/contact/martin-tatar.jpeg',
+    description: 'Community Program Manager',
     position: 'Microsoft',
     socials: [
       {
         name: 'E-mail',
-        href: 'mailto:zuzana.molcanova@microsoft.com',
+        href: 'mailto:martin.tatar@microsoft.com',
         icon: MailIcon,
       },
       {
         name: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/zuzanamol/',
+        href: 'https://www.linkedin.com/in/martintatar/',
         icon: LinkedInLogoIcon,
       },
     ],
@@ -28,8 +28,8 @@ const contact = [
   {
     name: 'Tomáš Odráška',
     image: '/images/contact/tomas-odraska.webp',
-    description: 'Program Lead',
-    position: 'ŠTC Microsoft',
+    description: 'Surface Commercial Device Seeding & GTM Manager',
+    position: 'Microsoft',
     socials: [
       {
         name: 'E-mail',

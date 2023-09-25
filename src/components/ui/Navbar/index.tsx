@@ -16,6 +16,7 @@ const navigation = [
   { name: 'Študenti', href: '/studenti' },
   { name: 'Absolventi', href: '/absolventi' },
   { name: 'Kontakt', href: '/#kontakt' },
+  { name: 'Blog', href: 'https://blog.stcmicrosoft.sk', blank: true },
 ];
 
 const Navbar = () => {
@@ -55,9 +56,8 @@ const Navbar = () => {
               <div className="absolute inset-y-0 right-0 lg:hidden">
                 <Disclosure.Button className="inline-flex h-10 w-10 items-center justify-center text-lg text-black focus:outline-none focus-visible:outline-dashed focus-visible:outline-1 focus-visible:outline-black active:outline-dashed active:outline-1 active:outline-black">
                   <Icon
-                    screenReaderLabel={`${
-                      open ? 'Zatvoriť' : 'Otvoriť'
-                    } hlavné menu`}
+                    screenReaderLabel={`${open ? 'Zatvoriť' : 'Otvoriť'
+                      } hlavné menu`}
                     icon={open ? CancelIcon : GlobalNavButtonIcon}
                   />
                 </Disclosure.Button>
@@ -65,12 +65,13 @@ const Navbar = () => {
             </div>
             <div className="hidden flex-grow items-center justify-between lg:flex">
               <ul className="flex flex-shrink-0 space-x-2 xl:space-x-4">
-                {navigation.map(({ name, href }) => (
+                {navigation.map(({ name, href, blank }) => (
                   <li key={name}>
                     <NavbarLink
                       className="text-sm font-normal tracking-normal text-black hover:underline hover:decoration-extra-dark-gray hover:decoration-2 hover:underline-offset-[5px]"
                       href={href}
                       as="link"
+                      target={blank ? '_blank' : '_self'}
                     >
                       {name}
                     </NavbarLink>
@@ -91,7 +92,7 @@ const Navbar = () => {
             {({ close }) => (
               <Container>
                 <ul className="divide-y">
-                  {navigation.map(({ name, href }) => (
+                  {navigation.map(({ name, href, blank }) => (
                     <Disclosure.Button
                       className="py-1.5"
                       key={name}
@@ -102,6 +103,7 @@ const Navbar = () => {
                         className="w-full text-black"
                         href={href}
                         as="link"
+                        target={blank ? '_blank' : '_self'}
                       >
                         {name}
                       </NavbarLink>

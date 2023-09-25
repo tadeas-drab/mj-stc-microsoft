@@ -6,6 +6,7 @@ import YouTubeLogoIcon from '../icons/YouTubeLogoIcon';
 import FooterLink from '../ui/Footer/FooterLink';
 import Section from '../ui/Section';
 import Icon from '../ui/Icon';
+import BlogLogoIcon from '../icons/BlogLogoIcon';
 
 const references = [
   {
@@ -30,6 +31,11 @@ const references = [
         name: 'Instagram',
         href: 'https://www.instagram.com/stcmicrosoft/',
         icon: InstagramLogoIcon,
+      },
+      {
+        name: 'Blog',
+        href: 'https://blog.stcmicrosoft.sk/',
+        icon: BlogLogoIcon,
       },
     ],
   },
@@ -63,42 +69,12 @@ const references = [
       },
     ],
   },
-  {
-    title: 'Microsoft Learn Student Ambassadors',
-    links: [
-      {
-        name: 'Student Ambassadors Slovensko',
-        href: 'https://studentambassadors.sk/',
-        icon: GlobeIcon,
-      },
-      {
-        name: 'LinkedIn',
-        href: 'https://www.linkedin.com/groups/12467142/',
-        icon: LinkedInLogoIcon,
-      },
-      {
-        name: 'Facebook',
-        href: 'https://www.facebook.com/studentambassadorsslovensko/',
-        icon: FacebookLogoIcon,
-      },
-      {
-        name: 'Instagram',
-        href: 'https://www.instagram.com/studentambassadorsslovensko/',
-        icon: InstagramLogoIcon,
-      },
-      {
-        name: 'YouTube',
-        href: 'https://www.youtube.com/channel/UCYWW4gMa5LoA75FdLdBOJJA',
-        icon: YouTubeLogoIcon,
-      },
-    ],
-  },
 ];
 
 const References = () => {
   return (
     <Section className="bg-white">
-      <div className="-my-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="-my-4 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
         {references.map(({ title, links }) => (
           <div key={title}>
             <h5 className="mb-2 whitespace-nowrap text-md font-semibold tracking-tight text-black">

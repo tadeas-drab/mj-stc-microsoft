@@ -56,7 +56,7 @@ const GraduateCard = ({
           )}
         </ul>
       </div>
-      {!!isAmbassador && (
+      {!!isAmbassador && false && (
         <div className="h-10 w-10 flex-shrink-0">
           <Image
             alt="Microsoft Learn Student Ambassadors logo"

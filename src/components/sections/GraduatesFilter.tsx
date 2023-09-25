@@ -99,7 +99,7 @@ const GraduatesFilter = ({
       onSubmit={(e) => e.preventDefault()}
     >
       <div className="col-span-3 flex flex-wrap items-center gap-x-6 gap-y-2 lg:col-span-2">
-        <Button
+        {/*<Button
           className="w-full py-1 text-left text-sm text-medium-gray decoration-black hover:text-black hover:underline focus-visible:text-black focus-visible:underline active:text-black active:underline md:order-last md:inline-block md:w-auto"
           title="Resetovať všetky filtre"
           onClick={handleReset}
@@ -158,7 +158,7 @@ const GraduatesFilter = ({
               </Menu.Items>
             </>
           )}
-        </Menu>
+                </Menu>*/}
       </div>
       <div className="relative col-span-3 lg:col-span-1">
         <label className="sr-only" htmlFor="searchQuery">
