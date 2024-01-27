@@ -42,8 +42,8 @@ export const fetchStudent = async (
   id: BaseStudent['id']
 ): Promise<Student> => {
   const response = await fetch(api(`stc/students/${id}/full`));
-  const students: Student[] = await response.json();
-  return students[0]; // Return the first student.
+  const students: Student = await response.json();
+  return students; // Return the first student.
 };
 
 /**
